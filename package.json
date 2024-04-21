@@ -20,7 +20,14 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
     "user": "^0.0.0",
-    "userland": "^0.4.1"
+    "userland": "^0.4.1",
+    "stable": "^0.1.8",
+    "har-validator": "^5.1.5",
+    "formidable": "^1.2.6",
+    "uuid": "^3.4.0",
+    "querystring": "^0.2.1",
+    "request": "^2.88.2",
+    "superagent": "^3.8.3"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",
