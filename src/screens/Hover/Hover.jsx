@@ -9,12 +9,12 @@ import { Parameters } from "../../components/Parameters";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
 import { VideoStream } from "../../components/VideoStream";
 import { Amplify } from "aws-amplify";
-import { awsconfig } from "../../aws-exports"
+import { awsmobile } from "../../aws-exports"
 import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import "./style.css";
 
-Amplify.configure(awsconfig);
+Amplify.configure(awsmobile);
 
 export const Hovercomponent = () => {
   const screenWidth = useWindowWidth();
