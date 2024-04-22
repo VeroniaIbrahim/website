@@ -9,12 +9,12 @@ import { Parameters } from "../../components/Parameters";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
 import { VideoStream } from "../../components/VideoStream";
 import { Amplify } from "aws-amplify";
-import { awsconfig } from "../../aws-exports";
-import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
+import  awsmobile  from "../../aws-exports";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import "./style.css";
 
-Amplify.configure(awsconfig);
+Amplify.configure(awsmobile);
 
 export const Hovercomponent = () => {
   const screenWidth = useWindowWidth();
@@ -45,7 +45,6 @@ export const Hovercomponent = () => {
   };
   return (
     <div className="hover">
-      <AmplifySignOut />
       <div
         className="overlap-wrapper-2"
         style={{
