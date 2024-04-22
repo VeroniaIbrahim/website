@@ -8,13 +8,13 @@ import { NavBar_2 } from "../../components/NavBar_2";
 import { Parameters } from "../../components/Parameters";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
 import { VideoStream } from "../../components/VideoStream";
-import { Amplify } from "aws-amplify";
-import "../../aws-export.js";
+//import { Amplify } from "aws-amplify";
+//import "../../aws-export.js";
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import "./style.css";
 
-Amplify.configure(awsmobile);
+//Amplify.configure(awsconfig);
 
 export const Hovercomponent = () => {
   const screenWidth = useWindowWidth();
