@@ -25,7 +25,7 @@ export const Hovercomponent = () => {
       console.error("No parameter data to send.");
       return;
     }
-    fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage", {
+    fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage?data=${parameterData}", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json' // Specify content type as JSON
