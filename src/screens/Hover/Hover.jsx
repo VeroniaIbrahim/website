@@ -27,7 +27,7 @@ export const Hovercomponent = () => {
     }
     //const queryString = encodeURIComponent(JSON.stringify(parameterData));
     fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage", {
-      method: 'GET',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json' // Specify content type as JSON
       },
