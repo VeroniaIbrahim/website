@@ -26,11 +26,10 @@ export const Hovercomponent = () => {
       return;
     }
     fetch('https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage', {
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(parameterData)
+      }
     })
       .then(response => {
         if (response.ok) {
