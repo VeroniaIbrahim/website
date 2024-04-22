@@ -23,7 +23,8 @@ const awsmobile = {
     },
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
-    ]
+    ],
+    "aws_api_gateway_endpoint": "https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage"
 };
 
 
