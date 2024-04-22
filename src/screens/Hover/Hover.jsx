@@ -25,7 +25,6 @@ export const Hovercomponent = () => {
       console.error("No parameter data to send.");
       return;
     }
-    //const queryString = encodeURIComponent(JSON.stringify(parameterData));
     fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage", {
       method: 'POST',
       headers: {
@@ -36,6 +35,7 @@ export const Hovercomponent = () => {
       .then(response => {
         if (response.ok) {
           console.log('Data sent to Lambda successfully');
+          console.log("Parameter Data:",parameterData);
         } else {
           console.error('Failed to send data to Lambda');
         }
