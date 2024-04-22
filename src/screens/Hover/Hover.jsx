@@ -25,12 +25,10 @@ export const Hovercomponent = () => {
       console.error("No parameter data to send.");
       return;
     }
-    const queryString = encodeURIComponent(JSON.stringify(parameterData));
-    fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage?data=${queryString}", {
+    //const queryString = encodeURIComponent(JSON.stringify(parameterData));
+    fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage?data=${parameterData}", {
       method: 'GET',
-      headers: {
-        'Content-Type': 'text/plain'
-      }
+      headers: {'Content-Type':'text/plain'}
     })
       .then(response => {
         if (response.ok) {
