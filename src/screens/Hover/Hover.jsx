@@ -28,7 +28,7 @@ export const Hovercomponent = () => {
     fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage", {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'text/plain'
       }
     })
       .then(response => {
