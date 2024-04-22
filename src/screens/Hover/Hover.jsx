@@ -28,7 +28,10 @@ export const Hovercomponent = () => {
     //const queryString = encodeURIComponent(JSON.stringify(parameterData));
     fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage", {
       method: 'GET',
-      headers: {'Content-Type':'text/plain'}
+      headers: {
+        'Content-Type': 'application/json' // Specify content type as JSON
+      },
+      body: JSON.stringify(parameterData) // Stringify the parameterData object
     })
       .then(response => {
         if (response.ok) {
