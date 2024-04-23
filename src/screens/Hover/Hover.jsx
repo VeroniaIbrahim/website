@@ -48,7 +48,7 @@ export const Hovercomponent = () => {
   };
 
   const sendDataTostart = () => {
-    work = "{1}";
+    work = 1;
     fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage", {
       method: 'POST',
       headers: {
@@ -70,7 +70,7 @@ export const Hovercomponent = () => {
   };
 
   const sendDataTostop = () => {
-    work = "{0}";
+    work = 0;
     fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage", {
       method: 'POST',
       headers: {
