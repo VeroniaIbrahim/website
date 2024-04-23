@@ -7,11 +7,10 @@
       html,
       body {
         margin: 0px;
-        height: 100% !important;
-        width: 1350px !important;
+        width: 100% !important;
         background:linear-gradient(180deg, rgb(5, 5, 24) 0%, rgb(28.9, 26.25, 126) 100%);
       }
-      /* a blue color as a generic focus style */
+      /* a blue color as a generic focus style height: 100% !important;*/
       button:focus-visible {
         outline: 2px solid #4a90e2 !important;
         outline: -webkit-focus-ring-color auto 5px !important;

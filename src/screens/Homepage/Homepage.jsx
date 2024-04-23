@@ -29,7 +29,7 @@ export const Homepage = () => {
             : screenWidth >= 834 && screenWidth < 1340
               ? "834px"
               : screenWidth >= 1340
-                ? "1340px"
+                ? "1348px"
                 : undefined,
       }}
     >
@@ -203,11 +203,9 @@ export const Homepage = () => {
           />
           <IntroWrapper
             className="intro-3"
-            homeBanner="https://c.animaapp.com/8gKnAxyl/img/home-banner-1-1-4@2x.png"
           />
           <NavBar
             className="nav-bar-instance"
-            maskGroup="https://c.animaapp.com/8gKnAxyl/img/mask-group-35@2x.png"
           />
         </>
       )}

@@ -9,7 +9,7 @@
   height: 292px;
   left: 16px;
   position: absolute;
-  top: 330px;
+  top: 380px;
   width: 1048px;
   font-family: var(--f22-font-family);
   font-size: var(--f22-font-size);
@@ -25,7 +25,7 @@
   left: 0;
   position: absolute;
   text-align: center;
-  top: 292px;
+  top: 342px;
   font-family: var(--f30-font-family);
   font-size: var(--f30-font-size);
   font-style: var(--f30-font-style);
@@ -39,7 +39,7 @@
   height: 89px;
   left: 12px;
   position: absolute;
-  top: 162px;
+  top: 212px;
   width: 1052px;
   font-family: var(--f22-font-family);
   font-size: var(--f22-font-size);
@@ -55,7 +55,7 @@
   left: 0;
   position: absolute;
   text-align: center;
-  top: 113px;
+  top: 163px;
   font-family: var(--f30-font-family);
   font-size: var(--f30-font-size);
   font-style: var(--f30-font-style);
@@ -77,4 +77,5 @@
   position: absolute;
   text-align: center;
   top: 0px;
+  text-decoration: underline;
 }

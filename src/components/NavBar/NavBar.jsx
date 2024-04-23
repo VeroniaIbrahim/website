@@ -25,10 +25,7 @@ export const NavBar = ({
 }) => {
   return (
     <div className={`nav-bar ${className}`}>
-      <div className="overlap-4">
-        <img className="mask-group-2" alt="Mask group" src="https://c.animaapp.com/zqIJEW6i/img/mask-group-22@2x.png" />
-      </div>
-      <div className="group-wrapper">
+      <div className="logo">
         <Link to="/">
           <img
             className="mask-group-3"
@@ -48,8 +45,6 @@ export const NavBar = ({
         </Link>
       </div>
       <div className= {`group-21 ${navalltext}`}>
-        <button className={`log-in ${login}`}><Link to="/log-in"><p className="p">Log In</p></Link></button>
-        <button className={`text-wrapper-9 ${registration}`}><Link to="/registration"><p className="p">Register</p></Link></button>
         <button className={`text-wrapper-10 ${contact}`}><Link to="/"><p className="p">Contact us</p></Link></button>
         <button className={`text-wrapper-11 ${about}`}><Link to="/"><p className="p">About us</p></Link></button>
         <button className={`reservation ${reservation}`}><Link to="/"><p className="p">Reservation</p></Link></button>
