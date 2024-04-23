@@ -13,12 +13,14 @@ export const Buttons = ({
   setClassName,
   resetClassName,
   sendDataToLambda,
+  sendDataTostart,
+  sendDataTostop,
 }) => {
-  
+
   return (
     <div className={`buttons ${className}`}>
-      <button className={`stop ${stopClassName}`}>Stop</button>
-      <button className={`start ${startClassName}`}>Start</button>
+      <button className={`stop ${stopClassName}`} onClick={sendDataTostop} >Stop</button>
+      <button className={`start ${startClassName}`} onClick={sendDataTostart}>Start</button>
       <button className={`set ${setClassName}`} onClick={sendDataToLambda}>Set</button>
       <button className={`reset ${resetClassName}`}>Reset</button>
     </div>

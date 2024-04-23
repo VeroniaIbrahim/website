@@ -20,6 +20,7 @@ Amplify.configure(awsConfig);
 export const Hovercomponent = () => {
   const screenWidth = useWindowWidth();
   const [parameterData, setParameterData] = useState(null);
+  const [Work, setWork] = useState(null);
 
   const sendDataToLambda = () => {
     if (!parameterData) {
@@ -45,6 +46,51 @@ export const Hovercomponent = () => {
         console.error('Error sending data to Lambda:', error);
       });
   };
+
+  const sendDataTostart = () => {
+    work = "{1}";
+    fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json' // Specify content type as JSON ?data=${parameterData}
+      },
+      body: JSON.stringify(Work) // Stringify the parameterData object
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log('Data sent to Lambda successfully');
+          console.log("Work:", Work);
+        } else {
+          console.error('Failed to send data to Lambda');
+        }
+      })
+      .catch(error => {
+        console.error('Error sending data to Lambda:', error);
+      });
+  };
+
+  const sendDataTostop = () => {
+    work = "{0}";
+    fetch("https://rq0btgzijg.execute-api.eu-west-3.amazonaws.com/teststage", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json' // Specify content type as JSON ?data=${parameterData}
+      },
+      body: JSON.stringify(Work) // Stringify the parameterData object
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log('Data sent to Lambda successfully');
+          console.log("Work:", Work);
+        } else {
+          console.error('Failed to send data to Lambda');
+        }
+      })
+      .catch(error => {
+        console.error('Error sending data to Lambda:', error);
+      });
+  };
+
   return (
     <div className="hover"
       style={{
@@ -141,6 +187,8 @@ export const Hovercomponent = () => {
           <SimulationStreaming className="simulation-streaming-2" />
           <Buttons
             sendDataToLambda={sendDataToLambda}
+            sendDataTostart={sendDataTostart}
+            sendDataTostop={sendDataTostop}
             parameterData={parameterData}
             className="buttons-2" />
           <NavBar
