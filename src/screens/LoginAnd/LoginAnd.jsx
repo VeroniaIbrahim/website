@@ -1,10 +1,8 @@
 import React from "react";
 import { useWindowWidth } from "../../breakpoints";
 import { LoginBar } from "../../components/LoginBar";
-import { AuthForm } from "../../components/AuthForm";
 import { NavLogWrapper } from "../../components/NavLogWrapper";
 import "./style.css";
-import { AuthForm } from "../../components/AuthForm";
 import  "@aws-amplify/ui-react/styles.css" ;
 
 export const LoginAnd = () => {
