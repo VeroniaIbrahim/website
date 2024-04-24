@@ -160,7 +160,6 @@ export const Homepage = () => {
           <IntroWrapper
             className="intro-instance"
             divClassName="instance-node"
-            homeBanner="https://c.animaapp.com/8gKnAxyl/img/home-banner-1-1-3@2x.png"
             homeBannerClassName="intro-2"
           />
           <Footer

@@ -97,7 +97,7 @@ export const Hovercomponent = () => {
         background: "linear-gradient(180deg, rgb(5, 5, 24) 0%, rgb(28.9, 26.25, 126) 100%)",
         height:
           screenWidth < 834
-            ? "2700px"
+            ? "2565px"
             : screenWidth >= 834 && screenWidth < 1300
               ? "2730px"
               : screenWidth >= 1300
@@ -283,17 +283,9 @@ export const Hovercomponent = () => {
           />
           <Buttons
             className="buttons-3"
-            groupClassName="buttons-4"
-            groupClassNameOverride="buttons-7"
-            overlapClassName="buttons-8"
-            overlapClassNameOverride="buttons-5"
-            overlapGroupClassName="buttons-5"
-            overlapGroupClassNameOverride="buttons-8"
-            overlapWrapperClassName="buttons-10"
-            overlapWrapperClassNameOverride="buttons-12"
             resetClassName="buttons-9"
             setClassName="buttons-11"
-            startClassName="buttons-9"
+            startClassName="buttons-90"
             stopClassName="buttons-6"
           />
           <Graphs

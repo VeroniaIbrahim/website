@@ -398,9 +398,9 @@
 
 .hover .class-9 {
   height: 250px !important;
-  left: 200px !important;
+  left: 15px !important;
   position: absolute !important;
-  top: 720px !important;
+  top: 580px !important;
   width: 327px !important;
   background-color: #d9d9d9;
 }
@@ -623,9 +623,9 @@
 
 .hover .parameters-3 {
   height: 422px !important;
-  left: 200px !important;
+  left: 15px !important;
   position: absolute !important;
-  top: 150px !important;
+  top: 80px !important;
   width: 326px !important;
 }
 
@@ -651,7 +651,7 @@
 
 .hover .parameters-6 {
   height: 25px !important;
-  left: 48px !important;
+  left: 58px !important;
   width: 93px !important;
 }
 
@@ -666,7 +666,7 @@
   font-style: unset !important;
   font-weight: 400 !important;
   height: 15px !important;
-  left: 22px !important;
+  left: 50px !important;
   letter-spacing: 0 !important;
   line-height: normal !important;
   top: 5px !important;
@@ -683,7 +683,7 @@
 
 .hover .parameters-10 {
   height: 25px !important;
-  left: 9px !important;
+  left: 6px !important;
   top: 135px !important;
   width: 139px !important;
 }
@@ -869,9 +869,9 @@
 
 .hover .simulation-streaming-3 {
   height: 23px !important;
-  left: 250px !important;
+  left: 80px !important;
   position: absolute !important;
-  top: 100px !important;
+  top: 40px !important;
   width: 200px !important;
 }
 
@@ -889,9 +889,9 @@
 
 .hover .buttons-3 {
   height: 85px !important;
-  left: 210px !important;
+  left: 0px !important;
   position: absolute !important;
-  top: 610px !important;
+  top: 540px !important;
   width: 284px !important;
 }
 
@@ -911,13 +911,14 @@
   font-size: 15px !important;
   font-style: unset !important;
   font-weight: 400 !important;
-  height: 18px !important;
-  left: 52px !important;
+  height: 25px !important;
+  left: 100px !important;
   letter-spacing: 0 !important;
   line-height: normal !important;
-  top: 8px !important;
+  top: 0px !important;
   white-space: nowrap !important;
-  width: unset !important;
+  width: 70px !important;
+  align-items: center !important;
 }
 
 .hover .buttons-7 {
@@ -935,13 +936,29 @@
   font-size: 15px !important;
   font-style: unset !important;
   font-weight: 400 !important;
-  height: 18px !important;
-  left: 49px !important;
+  height: 25px !important;
+  left: 250px !important;
   letter-spacing: 0 !important;
   line-height: normal !important;
-  top: 8px !important;
+  top: 0px !important;
   white-space: nowrap !important;
-  width: unset !important;
+  width: 70px !important;
+  align-items: center !important;
+}
+
+.hover .buttons-90 {
+  font-family: "Salsa", Helvetica !important;
+  font-size: 15px !important;
+  font-style: unset !important;
+  font-weight: 400 !important;
+  height: 25px !important;
+  left: 25px !important;
+  letter-spacing: 0 !important;
+  line-height: normal !important;
+  top: 0px !important;
+  white-space: nowrap !important;
+  width: 70px !important;
+  align-items: center !important;
 }
 
 .hover .buttons-10 {
@@ -955,13 +972,14 @@
   font-size: 15px !important;
   font-style: unset !important;
   font-weight: 400 !important;
-  height: 18px !important;
-  left: 56px !important;
+  height: 25px !important;
+  left: 175px !important;
   letter-spacing: 0 !important;
   line-height: normal !important;
-  top: 8px !important;
+  top: 0px !important;
   white-space: nowrap !important;
-  width: unset !important;
+  width: 70px !important;
+  align-items: center !important;
 }
 
 .hover .buttons-12 {
@@ -1097,9 +1115,9 @@
 
 .hover .graphs-18 {
   height: 1565px !important;
-  left: 200px !important;
+  left: 20px !important;
   position: absolute !important;
-  top: 900px !important;
+  top: 810px !important;
   width: 326px !important;
 }
 
@@ -1327,7 +1345,7 @@
 
 .hover .footer5{
   left:0px !important;
-  top:2500px !important;
+  top:2440px !important;
 }
 
 .hover .groupfooter{
