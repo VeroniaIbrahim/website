@@ -103,14 +103,7 @@ export const Hovercomponent = () => {
               : screenWidth >= 1300
                 ? "3248px"
                 : undefined,
-        width:
-          screenWidth < 834
-            ? "360px"
-            : screenWidth >= 834 && screenWidth < 1300
-              ? "834px"
-              : screenWidth >= 1300
-                ? "1348px"
-                : undefined,
+        width:"100%"
       }}
     >
       {screenWidth >= 834 && screenWidth < 1300 && (

@@ -23,14 +23,7 @@ export const Homepage = () => {
               : screenWidth >= 1340
                 ? "2100px"
                 : undefined,
-        width:
-          screenWidth < 834
-            ? "360px"
-            : screenWidth >= 834 && screenWidth < 1340
-              ? "834px"
-              : screenWidth >= 1340
-                ? "1348px"
-                : undefined,
+        width:"100%"
       }}
     >
       {screenWidth < 834 && (
