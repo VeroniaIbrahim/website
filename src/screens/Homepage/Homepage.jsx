@@ -18,9 +18,9 @@ export const Homepage = () => {
         height:
           screenWidth < 834
             ? "2465px"
-            : screenWidth >= 834 && screenWidth < 1340
+            : screenWidth >= 834 && screenWidth < 1300
               ? "1920px"
-              : screenWidth >= 1340
+              : screenWidth >= 1300
                 ? "2100px"
                 : undefined,
         width:"100%"
@@ -107,7 +107,7 @@ export const Homepage = () => {
         </>
       )}
 
-      {screenWidth >= 834 && screenWidth < 1340 && (
+      {screenWidth >= 834 && screenWidth < 1300 && (
         <>
           <NavBar_2 className="nav-bar-tab" />
           <Welcome
@@ -178,7 +178,7 @@ export const Homepage = () => {
         </>
       )}
 
-      {screenWidth >= 1340 && (
+      {screenWidth >= 1300 && (
         <>
           <Footer className="footer-instance" />
           <TestimonialsWrapper
