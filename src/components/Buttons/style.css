@@ -1,7 +1,6 @@
 .buttons {
   height: 126px;
   position: relative;
-  width: 421px;
 }
 
 .buttons .stop :hover{
@@ -25,9 +24,9 @@
 }
 
 .buttons .stop {
-  height: 51px;
-  left: 0;
-  top: 73px;
+  height: 50px;
+  left: 0px;
+  top: 70px;
   width: 203px;
   border: 2.5px solid;
   border-color: #6454f0;
@@ -45,7 +44,7 @@
 }
 
 .buttons .start {
-  height: 51px;
+  height: 50px;
   left: 0;
   top: 0;
   width: 203px;
@@ -65,11 +64,11 @@
 
 .buttons .set {
   height: 51px;
-  left: 220px;
-  top: 0;
+  left: 0px;
+  top: 140px;
   width: 203px;
-  border: 2.5px solid;
-  border-color: #6454f0;
+  position: absolute;
+  background-color: #6454f0;
   border-radius: 15px;
   color: #ffffff;
   font-family: var(--subheader-font-family);
@@ -85,11 +84,12 @@
 
 .buttons .reset {
   height: 51px;
-  left: 220px;
-  top: 75px;
+  left: 0px;
+  top: 210px;
   width: 203px;
   position: absolute;
-  background-color: #6454f0;
+  border: 2.5px solid;
+  border-color: #6454f0;
   border-radius: 15px;
   color: #ffffff;
   font-family: var(--subheader-font-family);

@@ -596,6 +596,7 @@
 .welcome-and .footer1{
   left:0px !important;
   top:1730px !important;
+  position: absolute !important;
 }
 
 .welcome-and .groupfooter1{

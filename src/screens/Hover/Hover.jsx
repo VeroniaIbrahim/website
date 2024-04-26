@@ -6,9 +6,9 @@ import { Graphs } from "../../components/Graphs";
 import { NavBar } from "../../components/NavBar";
 import { NavBar_2 } from "../../components/NavBar_2";
 import { Parameters } from "../../components/Parameters";
+import { Parametersnew } from "../../components/Parametersnew";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
-import { VideoStream } from "../../components/VideoStream";
-//import { URDFViewer } from "../../components/URDFViewer";
+import { URDFViewer } from "../../components/URDFViewer";
 import { Amplify } from "aws-amplify";
 import awsConfig from "../../aws-export";
 import { withAuthenticator } from "@aws-amplify/ui-react";
@@ -101,7 +101,7 @@ export const Hovercomponent = () => {
             : screenWidth >= 834 && screenWidth < 1300
               ? "2730px"
               : screenWidth >= 1300
-                ? "3248px"
+                ? "3348px"
                 : undefined,
         width:"100%"
       }}
@@ -109,9 +109,9 @@ export const Hovercomponent = () => {
       {screenWidth >= 834 && screenWidth < 1300 && (
         <>
           <Parameters className="parameters-instance" />
-          <VideoStream
+          <URDFViewer
+            urdfUrl="../../2dofhover/urdf/2dofhover.urdf"
             className="class-10"
-            videoStreamClassNameOverride="class12"
           />
           <SimulationStreaming className="simulation-streaming-instance" />
           <Buttons className="buttons-instance" />
@@ -171,10 +171,11 @@ export const Hovercomponent = () => {
         <>
           <Footer className="footer-instance" />
           <Graphs className="graphs-17" />
-          <VideoStream
+          <URDFViewer
+            urdfUrl="../../2dofhover/urdf/2dofhover.urdf"
             className="video-stream-instance"
           />
-          <Parameters
+          <Parametersnew
             setParameterData={setParameterData}
             className="parameters-2" />
           <SimulationStreaming className="simulation-streaming-2" />
@@ -192,9 +193,9 @@ export const Hovercomponent = () => {
 
       {screenWidth < 834 && (
         <>
-          <VideoStream
+          <URDFViewer
+            urdfUrl="../../2dofhover/urdf/2dofhover.urdf"
             className="class-9"
-            videoStreamClassNameOverride="class-11"
           />
           <Parameters
             className="parameters-3"
