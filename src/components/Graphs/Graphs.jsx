@@ -49,12 +49,13 @@ export const Graphs = ({
       try {
         const response = await axios.get(apiUrl);
         setData(response.data);
-        console.log('data:', data);
+        console.log('Data fetched successfully:', response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
+    console.log('Fetching data from:', apiUrl);
     fetchData();
   }, [apiUrl]);
 
