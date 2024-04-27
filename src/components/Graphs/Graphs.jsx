@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto"; // Import Chart.js library
 import "./style.css";
 
@@ -57,7 +57,6 @@ export const Graphs = ({
     fetchData();
   }, [apiUrl]);
 
-
   useEffect(() => {
     const createGraph = (ctx, label, dataset) => {
       return new Chart(ctx, {
@@ -88,20 +87,13 @@ export const Graphs = ({
       });
     };
 
-    // Create the graphs
-    for (const key of Object.keys(chartRefs.current)) {
-      const ctx = chartRefs.current[key]?.getContext("2d");
-      if (ctx && data && data[key.toLowerCase()]) {
-        const chart = createGraph(ctx, key, data[key.toLowerCase()]);
-      }
-    }
-
     // Cleanup function
     return () => {
-      for (const ref of Object.values(chartRefs.current)) {
-        if (ref) {
-          ref.destroy();
-        }
+      // Destroy all existing charts if Chart.js is loaded
+      if (typeof Chart !== 'undefined' && Chart.helpers && Chart.helpers.each) {
+        Chart.helpers.each(Chart.instances, function(instance) {
+          instance.destroy();
+        });
       }
     };
   }, [data]);
@@ -109,12 +101,12 @@ export const Graphs = ({
   return (
     <div className={`graphs ${className}`}>
       <div className={`group-22 ${groupClassName}`}>
-        {Object.keys(chartRefs.current).map((key, index) => (
-          <div key={xpos}>
-            <canvas className={`rectangle-5 ${rectangleClassName}`} ref={(ref) => chartRefs.current[key] = ref}></canvas>
-            <div className={`text-wrapper-12 ${xPosClassName}`}>{key}</div>
-          </div>
-        ))}
+      {data && Object.keys(data).map((key, index) => (
+        <div key={index}>
+          <canvas className={`rectangle-5 ${rectangleClassName}`} id={`chart-${key}`}></canvas>
+          <div className={`text-wrapper-12 ${xPosClassName}`}>X Pos</div>
+        </div>
+      ))}
       </div>
       <div className={`group-23 ${groupClassNameOverride}`}>
         <canvas ref={chartRefs.XPosPID} className={`rectangle-6 ${rectangleClassName2}`}></canvas>
