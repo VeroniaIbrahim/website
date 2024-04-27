@@ -50,7 +50,7 @@ const [error, setError] = useState(null);
 // Update fetchData function to handle errors properly
 const fetchData = async () => {
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test');
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
