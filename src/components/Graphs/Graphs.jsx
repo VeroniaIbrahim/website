@@ -43,31 +43,30 @@ export const Graphs = ({
   };
 
   const [data, setData] = useState(null);
- // State to hold loading state
- const [loading, setLoading] = useState(true);
- // State to hold error
- const [error, setError] = useState(null);
+// Add states for error handling and loading
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
 
-  // Function to fetch data from API Gateway endpoint
-  const fetchData = async () => {
-    try {
-      const response = await fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test');
-      if (!response.ok) {
-        throw new Error('Failed to fetch data');
-      }
-      const jsonData = await response.json();
-      setData(jsonData);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
+// Update fetchData function to handle errors properly
+const fetchData = async () => {
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
     }
-  };
+    const jsonData = await response.json();
+    setData(jsonData);
+  } catch (error) {
+    setError(error.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
-  // Fetch data on component mount
-  useEffect(() => {
-    fetchData();
-  }, []);
+// Update the useEffect hook to handle error and loading states
+useEffect(() => {
+  fetchData();
+}, []);
 
 
   useEffect(() => {
@@ -114,6 +113,11 @@ export const Graphs = ({
   return (
     <div className={`graphs ${className}`}>
       <div className={`group-22 ${groupClassName}`}>
+        {/* Display loading state */}
+    {loading && <div>Loading...</div>}
+    {/* Display error state */}
+    {error && <div>Error: {error}</div>}
+    {/* Render charts if data is available */}
       {data && Object.keys(data).map((key, index) => (
         <div key={index}>
           <canvas className={`rectangle-5 ${rectangleClassName}`} id={`chart-${key}`}></canvas>
