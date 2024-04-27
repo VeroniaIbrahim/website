@@ -43,21 +43,32 @@ export const Graphs = ({
   };
 
   const [data, setData] = useState(null);
+ // State to hold loading state
+ const [loading, setLoading] = useState(true);
+ // State to hold error
+ const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(apiUrl);
-        setData(response.data);
-        console.log('Data fetched successfully:', response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
+  // Function to fetch data from API Gateway endpoint
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test');
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
       }
-    };
+      const jsonData = await response.json();
+      setData(jsonData);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    console.log('Fetching data from:', apiUrl);
+  // Fetch data on component mount
+  useEffect(() => {
     fetchData();
-  }, [apiUrl]);
+  }, []);
+
 
   useEffect(() => {
     const createGraph = (ctx, label, dataset) => {
