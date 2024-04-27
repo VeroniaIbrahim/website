@@ -1,78 +1,3 @@
-/*
-We're constantly improving the code you see. 
-Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcNg&d=1152665201300829
-*/
-
-/*import React from "react";
-import "./style.css";
-
-export const Graphs = ({
-  className,
-  groupClassName,
-  rectangleClassName,
-  xPosClassName,
-  groupClassNameOverride,
-  rectangleClassNameOverride,
-  yPosClassName,
-  divClassName,
-  divClassNameOverride,
-  xVelClassName,
-  groupClassName1,
-  rectangleClassName1,
-  yVelClassName,
-  groupClassName2,
-  rectangleClassName2,
-  xPosPidClassName,
-  groupClassName3,
-  rectangleClassName3,
-  yPosPidClassName,
-  groupClassName4,
-  rectangleClassName4,
-  xVelPidClassName,
-  groupClassName5,
-  rectangleClassName5,
-  yVelPidClassName,
-  divClassName1,
-}) => {
-  return (
-    <div className={`graphs ${className}`}>
-      <div className={`group-22 ${groupClassName}`}>
-        <div className={`rectangle-5 ${rectangleClassName}`} />
-        <div className={`text-wrapper-12 ${xPosClassName}`}>X&nbsp;&nbsp;Pos</div>
-      </div>
-      <div className={`group-23 ${groupClassNameOverride}`}>
-        <div className={`rectangle-5 ${rectangleClassNameOverride}`} />
-        <div className={`text-wrapper-12 ${yPosClassName}`}>Y Pos</div>
-      </div>
-      <div className={`group-24 ${divClassName}`}>
-        <div className={`rectangle-6 ${divClassNameOverride}`} />
-        <div className={`x-vel ${xVelClassName}`}> X Vel</div>
-      </div>
-      <div className={`group-25 ${groupClassName1}`}>
-        <div className={`rectangle-5 ${rectangleClassName1}`} />
-        <div className={`text-wrapper-12 ${yVelClassName}`}>Y Vel</div>
-      </div>
-      <div className={`group-26 ${groupClassName2}`}>
-        <div className={`rectangle-6 ${rectangleClassName2}`} />
-        <div className={`text-wrapper-13 ${xPosPidClassName}`}>X Pos Pid</div>
-      </div>
-      <div className={`group-27 ${groupClassName3}`}>
-        <div className={`rectangle-6 ${rectangleClassName3}`} />
-        <div className={`text-wrapper-13 ${yPosPidClassName}`}>Y Pos Pid</div>
-      </div>
-      <div className={`group-28 ${groupClassName4}`}>
-        <div className={`rectangle-6 ${rectangleClassName4}`} />
-        <div className={`x-vel-PID ${xVelPidClassName}`}>X Vel Pid</div>
-      </div>
-      <div className={`group-29 ${groupClassName5}`}>
-        <div className={`rectangle-5 ${rectangleClassName5}`} />
-        <div className={`text-wrapper-12 ${yVelPidClassName}`}>Y Vel Pid</div>
-      </div>
-      <div className={`text-wrapper-14 ${divClassName1}`}>Graphs</div>
-    </div>
-  );
-};*/
-
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto"; // Import Chart.js library
 import "./style.css";
@@ -104,41 +29,47 @@ export const Graphs = ({
   rectangleClassName5,
   yVelPidClassName,
   divClassName1,
+  apiUrl = 'https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test'
 }) => {
   const chartRefs = {
-    XPos: useRef(null),
-    YPos: useRef(null),
-    XVel: useRef(null),
-    YVel: useRef(null),
-    XPosPID: useRef(null),
-    YPosPID: useRef(null),
-    XVelPID: useRef(null),
-    YVelPID: useRef(null),
+    xpos: useRef(null),
+    ypos: useRef(null),
+    xvel: useRef(null),
+    yvel: useRef(null),
+    xposPID: useRef(null),
+    yposPID: useRef(null),
+    xvelPID: useRef(null),
+    yvelPID: useRef(null),
   };
 
+  const [data, setData] = useState(null);
+
   useEffect(() => {
-    const generateData = () => {
-      const data = [];
-      for (let x = -10; x <= 10; x += 0.1) {
-        data.push({ x, y: mathFunction(x) });
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(apiUrl);
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
       }
-      return data;
     };
 
-    const mathFunction = (x) => {
-      return Math.pow(x, 2); // Example: sine function
-    };
+    fetchData();
+  }, [apiUrl]);
 
-    const createGraph = (ctx, label) => {
+
+  useEffect(() => {
+    const createGraph = (ctx, label, dataset) => {
       return new Chart(ctx, {
         type: "line",
         data: {
+          labels: dataset.map((item, index) => index),
           datasets: [{
             label: label,
             borderColor: "black",
             borderWidth: 1,
             pointRadius: 0,
-            data: generateData(),
+            data: dataset,
             fill: false,
           }],
         },
@@ -158,52 +89,56 @@ export const Graphs = ({
     };
 
     // Create the graphs
-    for (const [key, ref] of Object.entries(chartRefs)) {
-      if (ref.current) {
-        const chart = createGraph(ref.current.getContext("2d"), key);
-        ref.current.chart = chart;
+    for (const key of Object.keys(chartRefs.current)) {
+      const ctx = chartRefs.current[key]?.getContext("2d");
+      if (ctx && data && data[key.toLowerCase()]) {
+        const chart = createGraph(ctx, key, data[key.toLowerCase()]);
       }
     }
 
     // Cleanup function
     return () => {
-      for (const ref of Object.values(chartRefs)) {
-        if (ref.current && ref.current.chart) {
-          ref.current.chart.destroy();
+      for (const ref of Object.values(chartRefs.current)) {
+        if (ref) {
+          ref.destroy();
         }
       }
     };
-  }, []);
+  }, [data]);
 
   return (
     <div className={`graphs ${className}`}>
       <div className={`group-22 ${groupClassName}`}>
-        <canvas ref={chartRefs.XPos} className={`rectangle-5 ${rectangleClassName}`}></canvas>
-        <div className={`text-wrapper-12 ${xPosClassName}`}>X&nbsp;&nbsp;Pos</div>
+        {Object.keys(chartRefs.current).map((key, index) => (
+          <div key={xpos}>
+            <canvas className={`rectangle-5 ${rectangleClassName}`} ref={(ref) => chartRefs.current[key] = ref}></canvas>
+            <div className={`text-wrapper-12 ${xPosClassName}`}>{key}</div>
+          </div>
+        ))}
       </div>
       <div className={`group-23 ${groupClassNameOverride}`}>
-        <canvas ref={chartRefs.YPos} className={`rectangle-5 ${rectangleClassNameOverride}`}></canvas>
-        <div className={`text-wrapper-12 ${yPosClassName}`}>Y Pos</div>
+        <canvas ref={chartRefs.XPosPID} className={`rectangle-6 ${rectangleClassName2}`}></canvas>
+        <div className={`text-wrapper-13 ${xPosPidClassName}`}>X Pos Pid</div>
       </div>
       <div className={`group-24 ${divClassName}`}>
         <canvas ref={chartRefs.XVel} className={`rectangle-6 ${divClassNameOverride}`}></canvas>
         <div className={`x-vel ${xVelClassName}`}> X Vel</div>
       </div>
       <div className={`group-25 ${groupClassName1}`}>
-        <canvas ref={chartRefs.YVel} className={`rectangle-5 ${rectangleClassName1}`}></canvas>
-        <div className={`text-wrapper-12 ${yVelClassName}`}>Y Vel</div>
+        <canvas ref={chartRefs.XVelPID} className={`rectangle-6 ${rectangleClassName4}`}></canvas>
+        <div className={`x-vel-PID ${xVelPidClassName}`}>X Vel Pid</div>
       </div>
       <div className={`group-26 ${groupClassName2}`}>
-        <canvas ref={chartRefs.XPosPID} className={`rectangle-6 ${rectangleClassName2}`}></canvas>
-        <div className={`text-wrapper-13 ${xPosPidClassName}`}>X Pos Pid</div>
+        <canvas ref={chartRefs.YPos} className={`rectangle-5 ${rectangleClassNameOverride}`}></canvas>
+        <div className={`text-wrapper-12 ${yPosClassName}`}>Y Pos</div>
       </div>
       <div className={`group-27 ${groupClassName3}`}>
         <canvas ref={chartRefs.YPosPID} className={`rectangle-6 ${rectangleClassName3}`}></canvas>
         <div className={`text-wrapper-13 ${yPosPidClassName}`}>Y Pos Pid</div>
       </div>
       <div className={`group-28 ${groupClassName4}`}>
-        <canvas ref={chartRefs.XVelPID} className={`rectangle-6 ${rectangleClassName4}`}></canvas>
-        <div className={`x-vel-PID ${xVelPidClassName}`}>X Vel Pid</div>
+        <canvas ref={chartRefs.YVel} className={`rectangle-5 ${rectangleClassName1}`}></canvas>
+        <div className={`text-wrapper-12 ${yVelClassName}`}>Y Vel</div>
       </div>
       <div className={`group-29 ${groupClassName5}`}>
         <canvas ref={chartRefs.YVelPID} className={`rectangle-5 ${rectangleClassName5}`}></canvas>
