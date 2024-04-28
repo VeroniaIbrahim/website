@@ -131,9 +131,9 @@ fetch ('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test', {
     <div className={`graphs ${className}`}>
       <div className={`group-22 ${groupClassName}`}>
         {/* Display loading state */}
-        {loading && <div>Loading...</div>}
+        {/*loading && <div>Loading...</div>*/}
         {/* Display error state */}
-        {error && <div>Error: {error}</div>}
+        {/*error && <div>Error: {error}</div>*/}
         {/* Render charts if data is available */}
         {data && Object.keys(data).map((key, index) => (
           <div key={index}>
