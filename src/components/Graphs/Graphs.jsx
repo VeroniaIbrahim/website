@@ -99,11 +99,15 @@ export const Graphs = ({
     };
     // Create charts when data changes
     if (data) {
+      console.log("Data available, creating charts...");
       for (const [key, ref] of Object.entries(chartRefs)) {
         if (data[key] && ref.current) {
+          console.log("Creating chart for", key);
           createGraph(ref.current.getContext("2d"), key, data[key]);
         }
       }
+    } else {
+      console.log("No data available yet.");
     }
     // Cleanup function
     return () => {
