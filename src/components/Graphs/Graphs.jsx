@@ -51,12 +51,14 @@ export const Graphs = ({
     try {
       const response = await fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test');
       if (!response.ok) {
-        throw new Error('Failed to fetch data');
+        throw new Error(`Failed to fetch data: ${response.statusText}`);
       }
       const jsonData = await response.json();
       setData(jsonData);
+      setError(null); // Reset error state on successful data retrieval
     } catch (error) {
-      setError(error.message);
+      setError(error.message); // Set error message to be displayed
+      setData(null); // Clear data if an error occurs
     } finally {
       setLoading(false);
     }
