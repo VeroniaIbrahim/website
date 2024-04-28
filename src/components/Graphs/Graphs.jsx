@@ -29,7 +29,6 @@ export const Graphs = ({
   rectangleClassName5,
   yVelPidClassName,
   divClassName1,
-  apiUrl = 'https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test'
 }) => {
   const chartRefs = {
     xpos: useRef(null),
@@ -43,44 +42,44 @@ export const Graphs = ({
   };
 
   const [data, setData] = useState(null);
-// Add states for error handling and loading
-const [loading, setLoading] = useState(true);
-const [error, setError] = useState(null);
+  // Add states for error handling and loading
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-// Update fetchData function to handle errors properly
-const fetchData = async () => {
-  try {
-    const response = await fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test');
-    if (!response.ok) {
-      throw new Error('Failed to fetch data');
+  // Update fetchData function to handle errors properly
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test');
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const jsonData = await response.json();
+      setData(jsonData);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
     }
-    const jsonData = await response.json();
-    setData(jsonData);
-  } catch (error) {
-    setError(error.message);
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
-// Update the useEffect hook to handle error and loading states
-useEffect(() => {
-  fetchData();
-}, []);
+  // Update the useEffect hook to handle error and loading states
+  useEffect(() => {
+    fetchData();
+  }, []);
 
 
   useEffect(() => {
-    const createGraph = (ctx, label, dataset) => {
+    const createGraph = (ctx, label, data) => {
       return new Chart(ctx, {
         type: "line",
         data: {
-          labels: dataset.map((item, index) => index),
+          labels: data.map((item, index) => index),
           datasets: [{
             label: label,
             borderColor: "black",
             borderWidth: 1,
             pointRadius: 0,
-            data: dataset,
+            data: data.map(item => item[label.toLowerCase()]), // Extract data for the specific metric
             fill: false,
           }],
         },
@@ -98,12 +97,19 @@ useEffect(() => {
         },
       });
     };
-
+    // Create charts when data changes
+    if (data) {
+      for (const [key, ref] of Object.entries(chartRefs)) {
+        if (data[key] && ref.current) {
+          createGraph(ref.current.getContext("2d"), key, data[key]);
+        }
+      }
+    }
     // Cleanup function
     return () => {
       // Destroy all existing charts if Chart.js is loaded
       if (typeof Chart !== 'undefined' && Chart.helpers && Chart.helpers.each) {
-        Chart.helpers.each(Chart.instances, function(instance) {
+        Chart.helpers.each(Chart.instances, function (instance) {
           instance.destroy();
         });
       }
@@ -114,16 +120,16 @@ useEffect(() => {
     <div className={`graphs ${className}`}>
       <div className={`group-22 ${groupClassName}`}>
         {/* Display loading state */}
-    {loading && <div>Loading...</div>}
-    {/* Display error state */}
-    {error && <div>Error: {error}</div>}
-    {/* Render charts if data is available */}
-      {data && Object.keys(data).map((key, index) => (
-        <div key={index}>
-          <canvas className={`rectangle-5 ${rectangleClassName}`} id={`chart-${key}`}></canvas>
-          <div className={`text-wrapper-12 ${xPosClassName}`}>X Pos</div>
-        </div>
-      ))}
+        {loading && <div>Loading...</div>}
+        {/* Display error state */}
+        {error && <div>Error: {error}</div>}
+        {/* Render charts if data is available */}
+        {data && Object.keys(data).map((key, index) => (
+          <div key={index}>
+            <canvas ref={chartRefs[key]} className={`rectangle-5 ${rectangleClassName}`} id={`chart-${key}`}></canvas>
+            <div className={`text-wrapper-12 ${xPosClassName}`}>X Pos</div>
+          </div>
+        ))}
       </div>
       <div className={`group-23 ${groupClassNameOverride}`}>
         <canvas ref={chartRefs.XPosPID} className={`rectangle-6 ${rectangleClassName2}`}></canvas>
