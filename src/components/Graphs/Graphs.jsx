@@ -70,6 +70,8 @@ export const Graphs = ({
 
   useEffect(() => {
     const createGraph = (ctx, label, data) => {
+      console.log("Data for", label, ":", data);
+  console.log("Mapped data for", label, ":", data.map(item => item[label.toLowerCase()]));
       return new Chart(ctx, {
         type: "line",
         data: {
