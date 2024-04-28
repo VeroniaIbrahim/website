@@ -50,10 +50,10 @@ export const Graphs = ({
   const fetchData = async () => {
     try {
       const response = await fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test');
-      if (!response.ok) {
-        throw new Error(`Failed to fetch data: ${response.statusText}`);
-      }
       const jsonData = await response.json();
+      if (!response.ok) {
+        throw new Error(jsonData.body || response.statusText);
+      }
       setData(jsonData);
       setError(null); // Reset error state on successful data retrieval
     } catch (error) {
