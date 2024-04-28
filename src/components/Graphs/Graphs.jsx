@@ -46,23 +46,31 @@ export const Graphs = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Update fetchData function to handle errors properly
-  const fetchData = async () => {
-    try {
-      const response = await fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test');
-      const jsonData = await response.json();
-      if (!response.ok) {
-        throw new Error(jsonData.body || response.statusText);
-      }
-      setData(jsonData);
-      setError(null); // Reset error state on successful data retrieval
-    } catch (error) {
-      setError(error.message); // Set error message to be displayed
-      setData(null); // Clear data if an error occurs
-    } finally {
-      setLoading(false);
-    }
-  };
+// Make a GET request to your API endpoint
+fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json', // Set appropriate headers
+    // Additional headers if required
+  },
+})
+.then(response => {
+  // Check if the response is successful
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  // Parse the JSON response
+  return response.json();
+})
+.then(data => {
+  // Process the received data
+  console.log('Received data:', data);
+  // Update your UI with the received data
+})
+.catch(error => {
+  // Handle any errors
+  console.error('There was a problem with the fetch operation:', error);
+});
 
   // Update the useEffect hook to handle error and loading states
   useEffect(() => {
