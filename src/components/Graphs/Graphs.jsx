@@ -47,7 +47,7 @@ export const Graphs = ({
   const [error, setError] = useState(null);
 
 // Make a GET request to your API endpoint
-fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test', {
+fetch ('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test', {
   method: 'GET',
   headers: {
     'Content-Type': 'application/json', // Set appropriate headers
@@ -71,12 +71,6 @@ fetch('https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test', {
   // Handle any errors
   console.error('There was a problem with the fetch operation:', error);
 });
-
-  // Update the useEffect hook to handle error and loading states
-  useEffect(() => {
-    fetchData();
-  }, []);
-
 
   useEffect(() => {
     const createGraph = (ctx, label, data) => {
