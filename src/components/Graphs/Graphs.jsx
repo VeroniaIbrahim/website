@@ -71,7 +71,7 @@ export const Graphs = ({
   useEffect(() => {
     const createGraph = (ctx, label, data) => {
       console.log("Data for", label, ":", data);
-  console.log("Mapped data for", label, ":", data.map(item => item[label.toLowerCase()]));
+      console.log("Mapped data for", label, ":", data.map(item => item[label.toLowerCase()]));
       return new Chart(ctx, {
         type: "line",
         data: {
@@ -102,6 +102,7 @@ export const Graphs = ({
     // Create charts when data changes
     if (data) {
       console.log("Data available, creating charts...");
+      console.log("Data:", data);
       for (const [key, ref] of Object.entries(chartRefs)) {
         if (data[key] && ref.current) {
           console.log("Creating chart for", key);
