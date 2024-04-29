@@ -58,7 +58,7 @@ export const NavBar = ({
         <div className={`dropdown-exp ${dropdownexp}`}>
           <button className={`experiments ${experiments}`}>Experiments</button>
           <div className={`dropdown-content-experiments ${dropdowncontentexperiments}`}>
-            <Link to="/simulation-hover"><button className="p2">2 DOF Hover</button></Link>
+            <Link to="/Hover-Documentation"><button className="p2">2 DOF Hover</button></Link>
             <Link to="/simulation-ballbalance"><button className="p2">2 DOF Ball Balance</button></Link>
             <Link to="/simulation-servo"><button className="p2">Servo Base Unit</button></Link>
             <Link to="/simulation-pendulum"><button className="p2">Linear Inverted Pendulum</button></Link>

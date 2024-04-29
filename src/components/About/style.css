@@ -1,0 +1,64 @@
+.about {
+  height: 583px;
+  width: 1248px;
+}
+
+.about .overlap {
+  height: 584px;
+  position: relative;
+  top: -1px;
+}
+
+.about .the-DOF-hover-wrapper {
+  background-color: #ffffff73;
+  border-radius: 20px 0px 0px 20px;
+  height: 176px;
+  left: 633px;
+  position: absolute;
+  top: 226px;
+  width: 615px;
+}
+
+.about .the-DOF-hover {
+  color: #050518;
+  font-family: "Salsa", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  left: 6px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 35px;
+  width: 529px;
+}
+
+.about .div {
+  height: 584px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 738px;
+}
+
+.about .about-the-DOF {
+  color: #ffffff;
+  font-family: "Salsa", Helvetica;
+  font-size: 40px;
+  font-weight: 400;
+  left: 319px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
+.about .element {
+  height: 540px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 44px;
+  width: 496px;
+}

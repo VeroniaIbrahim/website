@@ -1,0 +1,21 @@
+.next {
+  background-color: #6454f0;
+  border-radius: 10px;
+  height: 44px;
+  position: relative;
+  width: 84px;
+}
+
+.next .text-wrapper-5 {
+  color: #ffffff;
+  font-family: "Salsa", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  height: 29px;
+  left: 17px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 7px;
+}

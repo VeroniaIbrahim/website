@@ -4,12 +4,11 @@ import React from "react";
 import ReactDOMClient from "react-dom/client";
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import { Hover } from "./screens/Hover";
+import { HoverDocumentation } from "./screens/HoverDocumentation";
 import { Homepage } from "./screens/Homepage";
 import { BallBalance } from "./screens/BallBalance";
 import { Pendulum } from "./screens/Pendulum";
 import { Servo } from "./screens/Servo"
-import {LoginAnd} from "./screens/LoginAnd"
-import {Registration} from "./screens/Registration"
 
 const app = document.getElementById("app");
 const root = ReactDOMClient.createRoot(app);
@@ -19,7 +18,15 @@ const router = createBrowserRouter([
       element: <Homepage/>,
     }, 
     {
-        path: "/simulation-hover",
+        path: "/Hover-Documentation",
+        element: <HoverDocumentation/>,
+    },
+    {
+        path: "/hover-simulation",
+        element: <Hover/>,
+    },
+    {
+        path: "/hover-realtime",
         element: <Hover/>,
     },
     {
@@ -33,14 +40,6 @@ const router = createBrowserRouter([
     {
         path:"/simulation-pendulum",
         element:<Pendulum/>
-    },
-    {
-        path:"/log-in",
-        element:<LoginAnd/>
-    },
-    {
-        path:"/registration",
-        element:<Registration/>
     },
 ]);
 
