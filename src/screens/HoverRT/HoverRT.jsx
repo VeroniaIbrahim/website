@@ -21,7 +21,7 @@ Amplify.configure(awsConfig);
 export const HoverRTcomponent = () => {
   const screenWidth = useWindowWidth();
   const [parameterData, setParameterData] = useState(null);
-  const [Work, setWork] = useState(null);
+  const [Work, setWork] = useState(0);
 
   const sendDataToLambda = () => {
     if (!parameterData) {
@@ -55,12 +55,12 @@ export const HoverRTcomponent = () => {
       headers: {
         'Content-Type': 'application/json' // Specify content type as JSON ?data=${parameterData}
       },
-      body: JSON.stringify(Work) // Stringify the parameterData object
+      body: "{\"work\": 1}" // Stringify the parameterData object
     })
       .then(response => {
         if (response.ok) {
           console.log('Data sent to Lambda successfully');
-          console.log("Work:", Work);
+          console.log("Work:", 1);
         } else {
           console.error('Failed to send data to Lambda');
         }
@@ -77,12 +77,12 @@ export const HoverRTcomponent = () => {
       headers: {
         'Content-Type': 'application/json' // Specify content type as JSON ?data=${parameterData}
       },
-      body: JSON.stringify(Work) // Stringify the parameterData object
+      body:  "{\"work\": 0}" // Stringify the parameterData object
     })
       .then(response => {
         if (response.ok) {
           console.log('Data sent to Lambda successfully');
-          console.log("Work:", Work);
+          console.log("Work:", 0);
         } else {
           console.error('Failed to send data to Lambda');
         }
