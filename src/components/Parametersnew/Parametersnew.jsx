@@ -17,20 +17,20 @@ export const Parametersnew = ({
   arrow3,
   arrow4
  }) => {
-  const [xposkp, setXPosKp] = useState("");
-  const [yposkp, setYPosKp] = useState("");
-  const [xposki, setXPosKi] = useState("");
-  const [yposki, setYPosKi] = useState("");
-  const [xposkd, setXPosKd] = useState("");
-  const [yposkd, setYPosKd] = useState("");
-  const [xvelkp, setXVelKp] = useState("");
-  const [yvelkp, setYVelKp] = useState("");
-  const [xvelki, setXVelKi] = useState("");
-  const [yvelki, setYVelKi] = useState("");
-  const [xvelkd, setXVelKd] = useState("");
-  const [yvelkd, setYVelKd] = useState("");
-  const [xposSet, setXSetPoint] = useState("");
-  const [yposSet, setYSetPoint] = useState("");
+  const [xposkp, setXPosKp] = useState(0);
+  const [yposkp, setYPosKp] = useState(0);
+  const [xposki, setXPosKi] = useState(0);
+  const [yposki, setYPosKi] = useState(0);
+  const [xposkd, setXPosKd] = useState(0);
+  const [yposkd, setYPosKd] = useState(0);
+  const [xvelkp, setXVelKp] = useState(0);
+  const [yvelkp, setYVelKp] = useState(0);
+  const [xvelki, setXVelKi] = useState(0);
+  const [yvelki, setYVelKi] = useState(0);
+  const [xvelkd, setXVelKd] = useState(0);
+  const [yvelkd, setYVelKd] = useState(0);
+  const [xposSet, setXSetPoint] = useState(0);
+  const [yposSet, setYSetPoint] = useState(0);
     // Function to update parameter data in the parent component
     const updateParameterData = () => {
       const data = {
@@ -121,7 +121,7 @@ export const Parametersnew = ({
             <div className="text-wrapper-3">Pid</div>
             <div className="text-wrapper-4">Kp</div>
             <div className="text-wrapper-5">Ki</div>
-            <input className="div-3" type="number" placeholder="kp" value={yposkp} onChange={(e) => setYPosKp(e.target.value)} onBlur={updateParameterData}/>
+            <input className="div-3" type="number" placeholder="kp" value={yposkp} onChange={(e) => setYPosKp( parseFloat(e.target.value))} onBlur={updateParameterData}/>
             <input className="div-4" type="number" placeholder="ki" value={yposki} onChange={(e) => setYPosKi(e.target.value)} onBlur={updateParameterData}/>
             <div className="text-wrapper-6">Kd</div>
             <input className="div-5" type="number" placeholder="kd" value={yposkd} onChange={(e) => setYPosKd(e.target.value)} onBlur={updateParameterData}/>
@@ -168,7 +168,7 @@ export const Parametersnew = ({
       <div className={`overlap-14 ${rollgroup}`}>
         <div className="roll-set-point">Roll Set Point</div>
         <div className="roll">Roll</div>
-        <input className="pitch-input" type="number" placeholder="Roll Angle" value={yposSet} onChange={(e) => setYsetPoint(e.target.value)} onBlur={updateParameterData}/>
+        <input className="pitch-input" type="number" placeholder="Roll Angle" value={yposSet} onChange={(e) => setYSetPoint(e.target.value)} onBlur={updateParameterData}/>
       </div>
     </div>
   );
