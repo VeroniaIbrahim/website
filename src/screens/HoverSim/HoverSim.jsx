@@ -35,9 +35,20 @@ export const HoverSimcomponent = () => {
     >
       {screenWidth >= 834 && screenWidth < 1300 && (
         <>
-          <Parametersnew className="parameters-instance" />
+          <Parametersnew 
+            className="parameters-instance"
+            rollgroup="rollgroup1"
+            pitchgroup="pitchgroup1"
+            plantgroup="plantimg1"
+            arrow3="arrow1"
+            arrow4="arrow1" />
           <SimulationStreaming className="simulation-streaming-instance" />
-          <Buttons className="buttons-instance" />
+          <Buttons 
+            className="buttons-instance"
+            startClassName="start1"
+            stopClassName="stop1"
+            setClassName="set1"
+            resetClassName="reset1" />
           <Graphs
             className="graphs-instance"
             divClassName="graphs-5"

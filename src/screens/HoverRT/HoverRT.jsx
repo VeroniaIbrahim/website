@@ -173,7 +173,7 @@ export const HoverRTcomponent = () => {
           <Footer className="footer-instance" />
           <Graphs className="graphs-17" />
           <URDFViewer
-            urdfUrl="../../2dofhover/urdf/2dofhover.urdf"
+            urdfUrl="/__parcel_source_root/src/2dofhover/urdf/2dofhover.urdf"
             className="video-stream-instance"
           />
           <Parametersnew

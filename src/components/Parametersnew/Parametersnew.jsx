@@ -9,6 +9,13 @@ import "./style.css";
 export const Parametersnew = ({ 
   className,
   setParameterData,
+  rollgroup,
+  pitchgroup,
+  plantimg,
+  imgbox,
+  plantgroup,
+  arrow3,
+  arrow4
  }) => {
   const [xposkp, setXPosKp] = useState("");
   const [yposkp, setYPosKp] = useState("");
@@ -46,7 +53,7 @@ export const Parametersnew = ({
     };
   return (
     <div className={`parametersnew ${className}`}>
-      <div className="overlap">
+      <div className={`overlap ${pitchgroup}`}>
         <div className="pitch-set-point">Pitch Set Point</div>
         <div className="pitch">Pitch</div>
         <input className="pitch-input" type="number" placeholder="Pitch Angle" value={xposSet} onChange={(e) => setXSetPoint(e.target.value)} onBlur={updateParameterData} />
@@ -91,12 +98,12 @@ export const Parametersnew = ({
             <input className="div-5" type="number" placeholder="kd" value={xvelkd} onChange={(e) => setXVelKd(e.target.value)} onBlur={updateParameterData}/>
             <img className="arrow-2" alt="Arrow" src="https://c.animaapp.com/8sio1tS4/img/arrow-13-1.svg" />
           </div>
-          <div className="overlap-6">
-            <div className="img-box" />
-            <img className="plant-img" alt="Plant img" src="https://c.animaapp.com/8sio1tS4/img/plant-img-1@2x.png" />
+          <div className={`overlap-6 ${plantgroup}`}>
+            <div className={`img-box ${imgbox}`} />
+            <img className={`plant-img ${plantimg}`} alt="Plant img" src="https://c.animaapp.com/8sio1tS4/img/plant-img-1@2x.png" />
             <div className="text-wrapper-7">Plant</div>
-            <img className="arrow-3" alt="Arrow" src="https://c.animaapp.com/8sio1tS4/img/arrow-16-1.svg" />
-            <img className="arrow-4" alt="Arrow" src="https://c.animaapp.com/8sio1tS4/img/arrow-16-1.svg" />
+            <img className={`arrow-3 ${arrow3}`} alt="Arrow" src="https://c.animaapp.com/8sio1tS4/img/arrow-16-1.svg" />
+            <img className={`arrow-4 ${arrow4}`} alt="Arrow" src="https://c.animaapp.com/8sio1tS4/img/arrow-16-1.svg" />
           </div>
           <div className="sensed-angular">Pitch Angular Velocity</div>
           <div className="pitch-angle">Pitch Angle</div>
@@ -158,7 +165,7 @@ export const Parametersnew = ({
           </div>
         </div>
       </div>
-      <div className="overlap-14">
+      <div className={`overlap-14 ${rollgroup}`}>
         <div className="roll-set-point">Roll Set Point</div>
         <div className="roll">Roll</div>
         <input className="pitch-input" type="number" placeholder="Roll Angle" value={yposSet} onChange={(e) => setYsetPoint(e.target.value)} onBlur={updateParameterData}/>

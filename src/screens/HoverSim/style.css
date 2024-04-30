@@ -433,7 +433,7 @@
 
 
 .hoversim .parameters-instance {
-  left: 90px !important;
+  left: 0px !important;
   position: absolute !important;
   top: 170px !important;
 }
@@ -445,7 +445,7 @@
 }
 
 .hoversim .buttons-instance {
-  left: 170px !important;
+  left: 10px !important;
   position: absolute !important;
   top: 580px !important;
 }
@@ -1443,7 +1443,7 @@
   left: 0px !important;
   position: fixed !important;
   top: 0px !important;
-  z-index: 1 !important;
+  z-index: 10000 !important;
 }
 
 .hoversim .footer1{
@@ -1538,4 +1538,46 @@
   left:210px !important;
   top: 65px !important;
   font-size: var(--f10-font-size) !important;
+}
+
+.hoversim .rollgroup1{
+  left: 10px !important;
+}
+
+.hoversim .pitchgroup1{
+  left:10px !important;
+  z-index: 1 !important;
+}
+
+.hoversim .plantimg1{
+  left: 400px !important;
+  z-index: 1 !important;
+}
+
+.hoversim .arrow1{
+  left: 32px !important;
+  z-index: -10;
+}
+
+.hoversim .start1{
+  left: 20px !important;
+  width: 150px !important;
+}
+
+.hoversim .stop1{
+  left: 200px !important;
+  top: 0px !important;
+  width: 150px !important;
+}
+
+.hoversim .set1{
+  left: 400px !important;
+  top: 0px !important;
+  width: 150px !important;
+}
+
+.hoversim .reset1{
+  left: 600px !important;
+  top: 0px !important;
+  width: 150px !important;
 }

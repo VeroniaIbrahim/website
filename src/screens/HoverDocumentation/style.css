@@ -159,7 +159,7 @@
 
 .hoverdoc .footer1{
   left:0px !important;
-  top:2550px !important;
+  top:2420px !important;
   position: absolute !important;
 }
 
@@ -330,13 +330,8 @@
   top: 470px !important;
 }
 
-.hoverdoc .howitworksbox1{
-
-}
-
 .hoverdoc .howtext{
-  font-size: 20px !important;
-  
+  font-size: 20px !important; 
 }
 
 .hoverdoc .thedof{
@@ -344,7 +339,64 @@
   width: 700px !important;
 }
 
-.hoverdoc .blockdiagram1{
-  top:2000px !important;
+.hoverdoc .modeling1{
+ top:1200px !important; 
 }
 
+.hoverdoc .modelingwrapper1{
+  left:527px !important;
+  width: 300px !important;
+  height: 80px !important; 
+}
+
+.hoverdoc .mod1{
+  top:0px !important;
+  left: 10px !important;
+  width: 10px !important;
+  position: absolute !important;
+}
+
+.hoverdoc .paragraph1{
+  left:0px !important;
+}
+
+.hoverdoc .imgmodel1{
+  width:50% !important;
+  height: 50% !important;
+  top: 100px !important;
+  left: -40px !important;
+  position: absolute !important;
+}
+
+.hoverdoc .positive1{
+  width: 400px !important;
+  left: 400px !important;
+  top: 30px !important;
+}
+
+.hoverdoc .equation1{
+  top: 650px !important;
+  left:50px !important;
+}
+
+.hoverdoc .blockdiagram1{
+  left: -500px !important;
+  top: 2000px !important;
+}
+
+.hoverdoc .imgbd1{
+  width: 800px !important;
+  position: absolute !important;
+}
+
+.hoverdoc .navi1{
+  top: 2350px !important;
+}
+
+.hoverdoc .next1{
+  left:700px !important;
+}
+
+.hoverdoc .back1{
+  opacity: 0% !important;
+}

@@ -26,7 +26,7 @@ export const HoverDoccomponent = () => {
           screenWidth < 834
             ? "2565px"
             : screenWidth >= 834 && screenWidth < 1300
-              ? "2730px"
+              ? "2610px"
               : screenWidth >= 1300
                 ? "3150px"
                 : undefined,
@@ -45,9 +45,22 @@ export const HoverDoccomponent = () => {
             HowItWorksbox="howitworksbox1"
             HowItWorkstext="howtext"
             thedegreeof="thedof" />
-          <Modeling className="modeling1" />
-          <BlockDiagram className="blockdiagram1" />
-          <Next className="next1" />
+          <Modeling 
+            className="modeling1"
+            model="model1"
+            modelingwrapper="modelingwrapper1"
+            Modeling1="mod1"
+            paragraphgroup="paragraph1"
+            whenapositive="positive1"
+            img="imgmodel1"
+            equation="equation1" />
+          <BlockDiagram 
+            className="blockdiagram1"
+            imgblockdiagram="imgbd1" />
+          <Next navigate="navi1"
+            next="next1"
+            back="back1"
+            linkTo1="/hover-simulation" />
           <NavBar_2 className="nav-bar-tab" />
           <Footer
             className="footer1"
