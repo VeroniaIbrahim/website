@@ -56,7 +56,7 @@ export const Parametersnew = ({
       <div className={`overlap ${pitchgroup}`}>
         <div className="pitch-set-point">Pitch Set Point</div>
         <div className="pitch">Pitch</div>
-        <input className="pitch-input" type="number" placeholder="Pitch Angle" value={xposSet} onChange={(e) => setXSetPoint(e.target.value)} onBlur={updateParameterData} />
+        <input className="pitch-input" type="number" placeholder="Pitch Angle" value={xposSet} onChange={(e) => setXSetPoint(parseFloat(e.target.value))} onBlur={updateParameterData} />
       </div>
       <div className="overlap-group">
         <div className="div">
@@ -81,10 +81,10 @@ export const Parametersnew = ({
             <div className="text-wrapper-3">Pid</div>
             <div className="text-wrapper-4">Kp</div>
             <div className="text-wrapper-5">Ki</div>
-            <input className="div-3" type="number" placeholder="kp" value={xposkp} onChange={(e) => setXPosKp(e.target.value)} onBlur={updateParameterData}/>
-            <input className="div-4" type="number" placeholder="ki" value={xposki} onChange={(e) => setXPosKi(e.target.value)} onBlur={updateParameterData}/>
+            <input className="div-3" type="number" placeholder="kp" value={xposkp} onChange={(e) => setXPosKp(parseFloat(e.target.value))} onBlur={updateParameterData}/>
+            <input className="div-4" type="number" placeholder="ki" value={xposki} onChange={(e) => setXPosKi(parseFloat(e.target.value))} onBlur={updateParameterData}/>
             <div className="text-wrapper-6">Kd</div>
-            <input className="div-5" type="number" placeholder="kd" value={xposkd} onChange={(e) => setXPosKd(e.target.value)} onBlur={updateParameterData}/>
+            <input className="div-5" type="number" placeholder="kd" value={xposkd} onChange={(e) => setXPosKd(parseFloat(e.target.value))} onBlur={updateParameterData}/>
             <img className="arrow-2" alt="Arrow" src="https://c.animaapp.com/8sio1tS4/img/arrow-13-1.svg" />
           </div>
           <div className="overlap-5">
@@ -92,10 +92,10 @@ export const Parametersnew = ({
             <div className="text-wrapper-3">Pid</div>
             <div className="text-wrapper-4">Kp</div>
             <div className="text-wrapper-5">Ki</div>
-            <input className="div-3" type="number" placeholder="kp" value={xvelkp} onChange={(e) => setXVelKp(e.target.value)} onBlur={updateParameterData}/>
-            <input className="div-4" type="number" placeholder="ki" value={xvelki} onChange={(e) => setXVelKi(e.target.value)} onBlur={updateParameterData}/>
+            <input className="div-3" type="number" placeholder="kp" value={xvelkp} onChange={(e) => setXVelKp(parseFloat(e.target.value))} onBlur={updateParameterData}/>
+            <input className="div-4" type="number" placeholder="ki" value={xvelki} onChange={(e) => setXVelKi(parseFloat(e.target.value))} onBlur={updateParameterData}/>
             <div className="text-wrapper-6">Kd</div>
-            <input className="div-5" type="number" placeholder="kd" value={xvelkd} onChange={(e) => setXVelKd(e.target.value)} onBlur={updateParameterData}/>
+            <input className="div-5" type="number" placeholder="kd" value={xvelkd} onChange={(e) => setXVelKd(parseFloat(e.target.value))} onBlur={updateParameterData}/>
             <img className="arrow-2" alt="Arrow" src="https://c.animaapp.com/8sio1tS4/img/arrow-13-1.svg" />
           </div>
           <div className={`overlap-6 ${plantgroup}`}>
@@ -122,9 +122,9 @@ export const Parametersnew = ({
             <div className="text-wrapper-4">Kp</div>
             <div className="text-wrapper-5">Ki</div>
             <input className="div-3" type="number" placeholder="kp" value={yposkp} onChange={(e) => setYPosKp( parseFloat(e.target.value))} onBlur={updateParameterData}/>
-            <input className="div-4" type="number" placeholder="ki" value={yposki} onChange={(e) => setYPosKi(e.target.value)} onBlur={updateParameterData}/>
+            <input className="div-4" type="number" placeholder="ki" value={yposki} onChange={(e) => setYPosKi(parseFloat(e.target.value))} onBlur={updateParameterData}/>
             <div className="text-wrapper-6">Kd</div>
-            <input className="div-5" type="number" placeholder="kd" value={yposkd} onChange={(e) => setYPosKd(e.target.value)} onBlur={updateParameterData}/>
+            <input className="div-5" type="number" placeholder="kd" value={yposkd} onChange={(e) => setYPosKd(parseFloat(e.target.value))} onBlur={updateParameterData}/>
             <img className="arrow-2" alt="Arrow" src="https://c.animaapp.com/8sio1tS4/img/arrow-13-1.svg" />
           </div>
           <div className="overlap-9">
@@ -132,10 +132,10 @@ export const Parametersnew = ({
             <div className="text-wrapper-3">Pid</div>
             <div className="text-wrapper-4">Kp</div>
             <div className="text-wrapper-5">Ki</div>
-            <input className="div-3" type="number" placeholder="kp" value={yvelkp} onChange={(e) => setYVelKp(e.target.value)} onBlur={updateParameterData}/>
-            <input className="div-4" type="number" placeholder="ki" value={yvelki} onChange={(e) => setYVelKi(e.target.value)} onBlur={updateParameterData}/>
+            <input className="div-3" type="number" placeholder="kp" value={yvelkp} onChange={(e) => setYVelKp(parseFloat(e.target.value))} onBlur={updateParameterData}/>
+            <input className="div-4" type="number" placeholder="ki" value={yvelki} onChange={(e) => setYVelKi(parseFloat(e.target.value))} onBlur={updateParameterData}/>
             <div className="text-wrapper-6">Kd</div>
-            <input className="div-5" type="number" placeholder="kd" value={yvelkd} onChange={(e) => setYVelKd(e.target.value)} onBlur={updateParameterData}/>
+            <input className="div-5" type="number" placeholder="kd" value={yvelkd} onChange={(e) => setYVelKd(parseFloat(e.target.value))} onBlur={updateParameterData}/>
             <img className="arrow-2" alt="Arrow" src="https://c.animaapp.com/8sio1tS4/img/arrow-13-1.svg" />
           </div>
           <div className="sensed-angular-2">Roll Angular Velocity</div>
@@ -168,7 +168,7 @@ export const Parametersnew = ({
       <div className={`overlap-14 ${rollgroup}`}>
         <div className="roll-set-point">Roll Set Point</div>
         <div className="roll">Roll</div>
-        <input className="pitch-input" type="number" placeholder="Roll Angle" value={yposSet} onChange={(e) => setYSetPoint(e.target.value)} onBlur={updateParameterData}/>
+        <input className="pitch-input" type="number" placeholder="Roll Angle" value={yposSet} onChange={(e) => setYSetPoint(parseFloat(e.target.value))} onBlur={updateParameterData}/>
       </div>
     </div>
   );
