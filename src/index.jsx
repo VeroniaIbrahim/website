@@ -3,12 +3,13 @@ import "../styleguide.css";
 import React from "react";
 import ReactDOMClient from "react-dom/client";
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
-import { Hover } from "./screens/Hover";
 import { HoverDocumentation } from "./screens/HoverDocumentation";
 import { Homepage } from "./screens/Homepage";
 import { BallBalance } from "./screens/BallBalance";
 import { Pendulum } from "./screens/Pendulum";
-import { Servo } from "./screens/Servo"
+import { Servo } from "./screens/Servo";
+import { HoverRT } from "./screens/HoverRT";
+import { HoverSim } from "./screens/HoverSim";
 
 const app = document.getElementById("app");
 const root = ReactDOMClient.createRoot(app);
@@ -23,11 +24,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/hover-simulation",
-        element: <Hover/>,
+        element: <HoverSim/>,
     },
     {
         path: "/hover-realtime",
-        element: <Hover/>,
+        element: <HoverRT/>,
     },
     {
         path: "/simulation-ballbalance",

@@ -340,6 +340,7 @@
   position: absolute;
   top: 115px;
   width: 747px;
+  background-color: #ffffff;
 }
 
 .block-diagram .overlap-12 {
@@ -359,11 +360,12 @@
 }
 
 .block-diagram .line-7 {
-  height: 2px;
+  height: 4px;
   left: 7px;
   position: absolute;
-  top: 71px;
+  top: 74px;
   width: 394px;
+  background-color: #ffffff;
 }
 
 .block-diagram .sensed-angular-2 {
@@ -397,11 +399,12 @@
 }
 
 .block-diagram .line-8 {
-  height: 2px;
+  height: 4px;
   left: 7px;
   position: absolute;
   top: 133px;
   width: 747px;
+  background-color: #ffffff;
 }
 
 .block-diagram .overlap-14 {
@@ -421,11 +424,12 @@
 }
 
 .block-diagram .line-9 {
-  height: 2px;
+  height: 4px;
   left: 7px;
   position: absolute;
   top: 79px;
   width: 394px;
+  background-color: #ffffff;
 }
 
 .block-diagram .overlap-group-3 {

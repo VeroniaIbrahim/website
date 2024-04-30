@@ -5,7 +5,7 @@ import { NavBar } from "../../components/NavBar";
 import { NavBar_2 } from "../../components/NavBar_2";
 import { About } from "../../components/About/About";
 import { HowItWorks } from "../../components/HowItWorks/HowItWorks";
-import { Modeling } from "../../components/Modeling/Modeling"; 
+import { Modeling } from "../../components/Modeling/Modeling";
 import { Next } from "../../components/Next/Next";
 import { BlockDiagram } from "../../components/BlockDiagram";
 import { Amplify } from "aws-amplify";
@@ -19,7 +19,7 @@ Amplify.configure(awsConfig);
 export const HoverDoccomponent = () => {
   const screenWidth = useWindowWidth();
   return (
-    <div className="hover"
+    <div className="hoverdoc"
       style={{
         background: "linear-gradient(180deg, rgb(5, 5, 24) 0%, rgb(28.9, 26.25, 126) 100%)",
         height:
@@ -28,13 +28,26 @@ export const HoverDoccomponent = () => {
             : screenWidth >= 834 && screenWidth < 1300
               ? "2730px"
               : screenWidth >= 1300
-                ? "3450px"
+                ? "3150px"
                 : undefined,
         width: "100%"
       }}
     >
       {screenWidth >= 834 && screenWidth < 1300 && (
         <>
+          <About className="about1"
+            theDOFhover="textdof"
+            theDOFhoverwrapper="boxdof"
+            abouttheDOF="titleabout"
+            img="hoverimg" />
+          <HowItWorks 
+            className="howitwork1"
+            HowItWorksbox="howitworksbox1"
+            HowItWorkstext="howtext"
+            thedegreeof="thedof" />
+          <Modeling className="modeling1" />
+          <BlockDiagram className="blockdiagram1" />
+          <Next className="next1" />
           <NavBar_2 className="nav-bar-tab" />
           <Footer
             className="footer1"
@@ -61,18 +74,25 @@ export const HoverDoccomponent = () => {
 
       {screenWidth >= 1300 && (
         <>
-          <Footer className="footer-instance" />
-          <NavBar className="nav-bar-instance2"/>
-          <About className="about"/>
-          <HowItWorks className="howitwork"/>
-          <Modeling className="modeling"/>
-          <BlockDiagram className="blockdiagram"/>
-          <Next className="next"/>
+          <Footer className="footerdoc" />
+          <NavBar className="navbardoc" />
+          <About className="about" />
+          <HowItWorks className="howitwork" />
+          <Modeling className="modeling" />
+          <BlockDiagram className="blockdiagram" />
+          <Next navigate="navigate"
+            linkTo1="/hover-simulation"
+            back="backop" />
         </>
       )}
 
       {screenWidth < 834 && (
         <>
+          <About className="about" />
+          <HowItWorks className="howitwork" />
+          <Modeling className="modeling" />
+          <BlockDiagram className="blockdiagram" />
+          <Next className="next" />
           <NavBar_2
             className="nav-bar-tab-instance"
             controltotal1="logo1"

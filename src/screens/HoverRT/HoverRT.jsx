@@ -8,6 +8,7 @@ import { NavBar_2 } from "../../components/NavBar_2";
 import { Parameters } from "../../components/Parameters";
 import { Parametersnew } from "../../components/Parametersnew";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
+import { Next } from "../../components/Next";
 import { URDFViewer } from "../../components/URDFViewer";
 import { Amplify } from "aws-amplify";
 import awsConfig from "../../aws-export";
@@ -17,7 +18,7 @@ import "./style.css";
 
 Amplify.configure(awsConfig);
 
-export const Hovercomponent = () => {
+export const HoverRTcomponent = () => {
   const screenWidth = useWindowWidth();
   const [parameterData, setParameterData] = useState(null);
   const [Work, setWork] = useState(null);
@@ -101,7 +102,7 @@ export const Hovercomponent = () => {
             : screenWidth >= 834 && screenWidth < 1300
               ? "2730px"
               : screenWidth >= 1300
-                ? "3348px"
+                ? "3548px"
                 : undefined,
         width:"100%"
       }}
@@ -188,6 +189,9 @@ export const Hovercomponent = () => {
           <NavBar
             className="nav-bar-instance2"
           />
+          <Next navigate="nav"
+            next="next"
+            linkTo2="/hover-simulation"/>
         </>
       )}
 
@@ -349,4 +353,4 @@ export const Hovercomponent = () => {
   );
 };
 
-export const Hover = withAuthenticator(Hovercomponent);
+export const HoverRT = withAuthenticator(HoverRTcomponent);

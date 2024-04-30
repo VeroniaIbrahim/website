@@ -3,19 +3,13 @@
   width: 1248px;
 }
 
-.about .overlap {
-  height: 584px;
-  position: relative;
-  top: -1px;
-}
-
 .about .the-DOF-hover-wrapper {
   background-color: #ffffff73;
   border-radius: 20px 0px 0px 20px;
   height: 176px;
   left: 633px;
   position: absolute;
-  top: 226px;
+  top: 225px;
   width: 615px;
 }
 
@@ -24,12 +18,12 @@
   font-family: "Salsa", Helvetica;
   font-size: 24px;
   font-weight: 400;
-  left: 6px;
+  left: 20px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   text-align: right;
-  top: 35px;
+  top: 30px;
   width: 529px;
 }
 
@@ -38,7 +32,7 @@
   left: 0;
   position: absolute;
   top: 0;
-  width: 738px;
+  width: 100%;
 }
 
 .about .about-the-DOF {
@@ -46,7 +40,7 @@
   font-family: "Salsa", Helvetica;
   font-size: 40px;
   font-weight: 400;
-  left: 319px;
+  left: 340px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;

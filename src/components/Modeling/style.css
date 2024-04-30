@@ -1,7 +1,7 @@
 .modeling {
   height: 936px;
   position: relative;
-  width: 1362px;
+  width: 1300px;
 }
 
 .modeling .overlap-2 {
@@ -9,16 +9,17 @@
   left: 0;
   position: absolute;
   top: 0;
-  width: 1362px;
+  width: 1300px;
 }
 
 .modeling .MODELING-wrapper {
   background-color: #ffffff4c;
   border-radius: 20px 0px 0px 20px;
   height: 86px;
-  left: 951px;
+  left: 938px;
   position: absolute;
   top: 0;
+  right: 0;
   width: 411px;
 }
 
@@ -45,332 +46,14 @@
 
 .modeling .group {
   height: 737px;
-  left: 0;
+  left: 60px;
   position: absolute;
   top: 0;
   width: 755px;
 }
 
-.modeling .overlap-4 {
-  height: 657px;
-  left: -1px;
-  position: absolute;
-  top: 38px;
-  width: 704px;
-}
-
-.modeling .overlap-group-2 {
-  height: 657px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 704px;
-}
-
-.modeling .ellipse {
-  background-color: #787878;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 61px/53.5px;
-  height: 107px;
-  left: 11px;
-  position: absolute;
-  top: 147px;
-  transform: rotate(10deg);
-  width: 122px;
-}
-
-.modeling .ellipse-2 {
-  background-color: #787878;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 61px/53.5px;
-  height: 107px;
-  left: 8px;
-  position: absolute;
-  top: 134px;
-  transform: rotate(10deg);
-  width: 122px;
-}
-
-.modeling .ellipse-3 {
-  background-color: #787878;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 61px/53.5px;
-  height: 107px;
-  left: 312px;
-  position: absolute;
-  top: 67px;
-  transform: rotate(10deg);
-  width: 122px;
-}
-
-.modeling .ellipse-4 {
-  background-color: #787878;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 61px/53.5px;
-  height: 107px;
-  left: 322px;
-  position: absolute;
-  top: 59px;
-  transform: rotate(10deg);
-  width: 122px;
-}
-
-.modeling .ellipse-5 {
-  background-color: #787878;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 61px/53.5px;
-  height: 107px;
-  left: 127px;
-  position: absolute;
-  top: 434px;
-  transform: rotate(10deg);
-  width: 122px;
-}
-
-.modeling .ellipse-6 {
-  background-color: #787878;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 61px/53.5px;
-  height: 107px;
-  left: 125px;
-  position: absolute;
-  top: 422px;
-  transform: rotate(10deg);
-  width: 122px;
-}
-
-.modeling .ellipse-7 {
-  background-color: #787878;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 61px/53.5px;
-  height: 107px;
-  left: 417px;
-  position: absolute;
-  top: 350px;
-  transform: rotate(10deg);
-  width: 122px;
-}
-
-.modeling .ellipse-8 {
-  background-color: #787878;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 61px/53.5px;
-  height: 107px;
-  left: 427px;
-  position: absolute;
-  top: 342px;
-  transform: rotate(10deg);
-  width: 122px;
-}
-
-.modeling .arrow {
-  height: 340px;
-  left: 65px;
-  position: absolute;
-  top: 182px;
-  width: 639px;
-}
-
 .modeling .img {
-  height: 547px;
-  left: 76px;
-  position: absolute;
-  top: 111px;
-  width: 310px;
-}
-
-.modeling .vector {
-  height: 64px;
-  left: 88px;
-  position: absolute;
-  top: 546px;
-  width: 60px;
-}
-
-.modeling .vector-2 {
-  height: 60px;
-  left: 605px;
-  position: absolute;
-  top: 446px;
-  width: 64px;
-}
-
-.modeling .pitch {
-  color: #ffffff;
-  font-family: "Salsa", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
-  left: 569px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 513px;
-  white-space: nowrap;
-  width: 109px;
-}
-
-.modeling .text-wrapper {
-  color: #ffffff;
-  font-family: "Salsa", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
-  left: 315px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 446px;
-}
-
-.modeling .ff {
-  color: #ffffff;
-  font-family: "Salsa", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
-  left: 473px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 243px;
-}
-
-.modeling .fr {
-  color: #ffffff;
-  font-family: "Salsa", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
-  left: 168px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 320px;
-}
-
-.modeling .roll {
-  color: #ffffff;
-  font-family: "Salsa", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
-  left: 110px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 602px;
-  white-space: nowrap;
-  width: 109px;
-}
-
-.modeling .arrow-2 {
-  height: 104px;
-  left: 241px;
-  position: absolute;
-  top: 388px;
-  width: 188px;
-}
-
-.modeling .line {
-  height: 109px;
-  left: 428px;
-  object-fit: cover;
-  position: absolute;
-  top: 398px;
-  width: 56px;
-}
-
-.modeling .line-2 {
-  height: 117px;
-  left: 482px;
-  position: absolute;
-  top: 281px;
-  width: 12px;
-}
-
-.modeling .line-3 {
-  height: 117px;
-  left: 381px;
-  position: absolute;
-  top: 0;
-  width: 12px;
-}
-
-.modeling .line-4 {
-  height: 117px;
-  left: 65px;
-  position: absolute;
-  top: 66px;
-  width: 12px;
-}
-
-.modeling .line-5 {
-  height: 117px;
-  left: 179px;
-  position: absolute;
-  top: 358px;
-  width: 12px;
-}
-
-.modeling .fb {
-  color: #ffffff;
-  font-family: "Salsa", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
-  left: 58px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 22px;
-}
-
-.modeling .x {
-  color: #ffffff;
-  font-family: "Salsa", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
-  left: 719px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 545px;
-}
-
-.modeling .fl {
-  color: #ffffff;
-  font-family: "Salsa", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
-  left: 377px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 0;
-}
-
-.modeling .y {
-  color: #ffffff;
-  font-family: "Salsa", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
-  left: 67px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 700px;
+  height: 450px;
 }
 
 .modeling .when-a-positive {
@@ -378,7 +61,7 @@
   font-family: "Salsa", Helvetica;
   font-size: 24px;
   font-weight: 400;
-  left: 693px;
+  left: 650px;
   letter-spacing: 0;
   line-height: 40px;
   position: absolute;
@@ -397,6 +80,6 @@
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 811px;
+  top: 500px;
   width: 718px;
 }

@@ -6,10 +6,14 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 import React from "react";
 import "./style.css";
 
-export const HowItWorks = ({ className }) => {
+export const HowItWorks = ({
+  className,
+  HowItWorksbox,
+  HowItWorkstext,
+  thedegreeof }) => {
   return (
     <div className={`how-it-works ${className}`}>
-      <p className="the-degree-of">
+      <p className={`the-degree-of ${thedegreeof}`}>
         The 2 Degree Of Freedom (dof) Hovercraft Features A Planar Round Frame With Four Propellers Mounted On It. The
         Frame Is Designed To Rotate About The Pitch And Roll Axes, Providing Two Degrees Of Freedom. Each Propeller Is
         Driven By A Dc Motor Mounted At The Vertices Of The Frame.
@@ -25,8 +29,8 @@ export const HowItWorks = ({ className }) => {
         Directly Through Wires. This Wiring Setup Allows For Precise Control And Monitoring Of The Hovercraft&#39;s
         Movements.
       </p>
-      <div className="overlap-group">
-        <div className="HOW-IT-WORKS">-how It Works-</div>
+      <div className={`overlap-group ${HowItWorksbox}`}>
+        <div className={`HOW-IT-WORKS ${HowItWorkstext}`}>-how It Works-</div>
       </div>
     </div>
   );

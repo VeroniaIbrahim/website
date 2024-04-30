@@ -65,16 +65,16 @@ export const BlockDiagram = ({ className }) => {
           </div>
           <div className="overlap-12">
             <img className="arrow-11" alt="Arrow" src="https://c.animaapp.com/aDg8NBB3/img/arrow-9-1.svg" />
-            <img className="line-7" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-1-3.svg" />
+            <img className="line-7" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-2-3.svg" />
           </div>
           <div className="sensed-angular-2">Roll Angular Velocity</div>
           <div className="overlap-13">
             <img className="arrow-12" alt="Arrow" src="https://c.animaapp.com/aDg8NBB3/img/arrow-14-1.svg" />
-            <img className="line-8" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-8-1.svg" />
+            <img className="line-8" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-2-3.svg" />
           </div>
           <div className="overlap-14">
             <img className="arrow-13" alt="Arrow" src="https://c.animaapp.com/aDg8NBB3/img/arrow-15-1.svg" />
-            <img className="line-9" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-5-3.svg" />
+            <img className="line-9" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-2-3.svg" />
           </div>
         </div>
         <div className="overlap-group-3">

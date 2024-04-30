@@ -6,6 +6,7 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 import React from "react";
 import "./style.css";
 
+
 export const Modeling = ({ className }) => {
   return (
     <div className={`modeling ${className}`}>
@@ -15,37 +16,7 @@ export const Modeling = ({ className }) => {
         </div>
         <div className="overlap-3">
           <div className="group">
-            <div className="overlap-4">
-              <div className="overlap-group-2">
-                <div className="ellipse" />
-                <div className="ellipse-2" />
-                <div className="ellipse-3" />
-                <div className="ellipse-4" />
-                <div className="ellipse-5" />
-                <div className="ellipse-6" />
-                <div className="ellipse-7" />
-                <div className="ellipse-8" />
-                <img className="arrow" alt="Arrow" src="https://c.animaapp.com/aDg8NBB3/img/arrow-1-2.svg" />
-                <img className="img" alt="Arrow" src="https://c.animaapp.com/aDg8NBB3/img/arrow-2-2.svg" />
-                <img className="vector" alt="Vector" src="https://c.animaapp.com/aDg8NBB3/img/vector-2-1.svg" />
-                <img className="vector-2" alt="Vector" src="https://c.animaapp.com/aDg8NBB3/img/vector-3-1.svg" />
-                <div className="pitch">Pitch</div>
-                <div className="text-wrapper">L</div>
-                <div className="ff">Ff</div>
-                <div className="fr">Fr</div>
-                <div className="roll">Roll</div>
-                <img className="arrow-2" alt="Arrow" src="https://c.animaapp.com/aDg8NBB3/img/arrow-3-2.svg" />
-                <img className="line" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-1-2.svg" />
-                <img className="line-2" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-2-2.svg" />
-                <img className="line-3" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-5-2.svg" />
-                <img className="line-4" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-4-1.svg" />
-                <img className="line-5" alt="Line" src="https://c.animaapp.com/aDg8NBB3/img/line-5-2.svg" />
-              </div>
-              <div className="fb">Fb</div>
-            </div>
-            <div className="x">X</div>
-            <div className="fl">Fl</div>
-            <div className="y">Y</div>
+            <img src="https://c.animaapp.com/Q3ROovgs/img/hover-model-1-1.png" className="img" alt="loading..."/>
           </div>
           <p className="when-a-positive">
             When A Positive Voltage Is Applied To Any Motor A Positive Thrust Force Is Generated And This Causes The
@@ -57,7 +28,7 @@ export const Modeling = ({ className }) => {
         </div>
       </div>
       <p className="the-model-equation">
-        The Model Equation for each Joint: <br />J theta’’ = (F1-F2)*L - b theta’ + mgr * sin(theta)
+        <u>The Model Equation for each Joint:</u> <br />J &#952;’’ = (F1-F2)*L - b &#952;’ + mgr * sin &#952;
       </p>
     </div>
   );

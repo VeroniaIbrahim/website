@@ -5,11 +5,19 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 
-export const Next = ({ className }) => {
+export const Next = ({
+  navigate,
+  next,
+  back,
+  linkTo1,
+  linkTo2
+}) => {
   return (
-    <div className={`next ${className}`}>
-      <div className="text-wrapper-5">Next</div>
+    <div className={`navigate ${navigate}`}>
+      <button className={`back ${back}`}><Link to={linkTo2}>Back</Link></button>
+      <button className={`next ${next}`}><Link to={linkTo1}>Next</Link></button>
     </div>
   );
 };
