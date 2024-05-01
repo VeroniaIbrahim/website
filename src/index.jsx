@@ -31,27 +31,27 @@ const router = createBrowserRouter([
     element: <Homepage />,
   },
   {
-    path: "/Hover-Documentation",
+    path: "/Hover-Documentation/",
     element: <HoverDocumentation />,
   },
   {
-    path: "/hover-simulation",
+    path: "/hover-simulation/",
     element: <HoverSim />,
   },
   {
-    path: "/hover-realtime",
+    path: "/hover-realtime/",
     element: <HoverRT />,
   },
   {
-    path: "/simulation-ballbalance",
+    path: "/simulation-ballbalance/",
     element: <BallBalance />,
   },
   {
-    path: "/simulation-servo",
+    path: "/simulation-servo/",
     element: <Servo />,
   },
   {
-    path: "/simulation-pendulum",
+    path: "/simulation-pendulum/",
     element: <Pendulum />,
   },
 ]);

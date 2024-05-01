@@ -627,6 +627,7 @@
   left: 0px !important;
   position: fixed !important;
   top: 0px !important;
+  z-index: 1000 !important;
 }
 
 .hover .parameters-3 {
