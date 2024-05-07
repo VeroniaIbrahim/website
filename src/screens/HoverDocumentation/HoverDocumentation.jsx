@@ -24,7 +24,7 @@ export const HoverDoccomponent = () => {
         background: "linear-gradient(180deg, rgb(5, 5, 24) 0%, rgb(28.9, 26.25, 126) 100%)",
         height:
           screenWidth < 834
-            ? "2565px"
+            ? "1220px"
             : screenWidth >= 834 && screenWidth < 1300
               ? "2610px"
               : screenWidth >= 1300
@@ -101,11 +101,35 @@ export const HoverDoccomponent = () => {
 
       {screenWidth < 834 && (
         <>
-          <About className="about" />
-          <HowItWorks className="howitwork" />
-          <Modeling className="modeling" />
-          <BlockDiagram className="blockdiagram" />
-          <Next className="next" />
+          <About 
+            className="about20"
+            theDOFhoverwrapper="about21"
+            theDOFhover="about22"
+            aboutwrapper="about23"
+            abouttheDOF="about24"
+            img="about25" />
+          <HowItWorks 
+            className="howitwork20"
+            thedegreeof="howitwork21"
+            HowItWorksbox="howitwork22"
+            HowItWorkstext="howitwork23"
+             />
+          <Modeling 
+            className="modeling20"
+            model="modeling21"
+            modelingwrapper="modeling22"
+            modeling1="modeling23"
+            paragraphgroup="modeling24"
+            whenapositive="modeling25"
+            equation="modeling26"
+            img="modeling27" />
+          <BlockDiagram 
+            className="blockdiagram20"
+            imgblockdiagram="blockdiagram21" />
+          <Next navigate="navigate2"
+            linkTo1="/hover-simulation"
+            back="backop2"
+            next="next2" />
           <NavBar_2
             className="nav-bar-tab-instance"
             controltotal1="logo1"
@@ -115,8 +139,8 @@ export const HoverDoccomponent = () => {
             controlchef3="nav-bar4"
             navbardrop="nav-bar5"
             navbartext="nav-bar6"
-            dropdowncontentexperiments="nav-bar7"
-            dropdowncontenttheories="nav-bar8"
+            dropdowncontentexperiments="nav72"
+            dropdowncontenttheories="nav82"
           />
           <Footer
             className="footer5"

@@ -31,8 +31,6 @@ export const NavBar_2 = ({
         <div className={`dropdown-content-nav ${navbardrop}`}>
           <Link className="a" to="/#"><button className={`text1 ${navbartext}`}>About us</button></Link>
           <Link className="a" to="/#"><button className={`text1 ${navbartext}`}>Contact us</button></Link>
-          <Link className="a" to="/#"><button className={`text1 ${navbartext}`}>Register</button></Link>
-          <Link className="a" to="/log-in"><button className={`text1 ${navbartext}`}>Log In</button></Link>
           <Link className="a" to="/#"><button className={`text1 ${navbartext}`}>Reservation</button></Link>
           <div className="dropdown-theory">
             <div className="a">

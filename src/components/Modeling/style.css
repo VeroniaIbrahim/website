@@ -34,6 +34,8 @@
   position: absolute;
   text-align: center;
   top: 29px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .modeling .overlap-3 {
@@ -68,6 +70,8 @@
   text-align: right;
   top: 72px;
   width: 635px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .modeling .the-model-equation {
@@ -82,4 +86,6 @@
   text-align: center;
   top: 500px;
   width: 718px;
+  text-align: justify;
+  text-justify: inter-word;
 }

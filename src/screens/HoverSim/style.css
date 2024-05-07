@@ -295,7 +295,7 @@
   height: 1323px !important;
   left: 30px !important;
   position: absolute !important;
-  top: 1150px !important;
+  top: 650px !important;
   width: 765px !important;
   align-items: center !important;
 }
@@ -1448,7 +1448,7 @@
 
 .hoversim .footer1{
   left:0px !important;
-  top:2550px !important;
+  top:2100px !important;
   position: absolute !important;
 }
 
@@ -1580,4 +1580,13 @@
   left: 600px !important;
   top: 0px !important;
   width: 150px !important;
+}
+
+.hoversim .nav1{
+  top: 2030px !important;
+  position: absolute !important;
+}
+
+.hoversim .next1{
+  left: 710px !important;
 }

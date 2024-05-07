@@ -1,13 +1,12 @@
 .about {
   height: 583px;
-  width: 1248px;
 }
 
 .about .the-DOF-hover-wrapper {
   background-color: #ffffff73;
   border-radius: 20px 0px 0px 20px;
   height: 176px;
-  left: 633px;
+  left: 600px;
   position: absolute;
   top: 225px;
   width: 615px;
@@ -22,9 +21,10 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  text-align: right;
   top: 30px;
   width: 529px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about .div {
@@ -32,7 +32,7 @@
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 800px;
 }
 
 .about .about-the-DOF {
@@ -46,6 +46,9 @@
   position: absolute;
   text-align: center;
   top: 0;
+  text-align: justify;
+  text-align: right;
+    text-justify: distribute-all-lines;
 }
 
 .about .element {

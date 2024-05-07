@@ -7,6 +7,7 @@ import { NavBar } from "../../components/NavBar";
 import { NavBar_2 } from "../../components/NavBar_2";
 import { Next } from "../../components/Next/Next";
 import { Parametersnew } from "../../components/Parametersnew";
+import { BlockDiagramand } from "../../components/BlockDiagramand";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
 import { Amplify } from "aws-amplify";
 import awsConfig from "../../aws-export";
@@ -98,6 +99,11 @@ export const HoverSimcomponent = () => {
             rectangle="rectanglefooter1"
             copyright="copyrightfooter1"
           />
+          <Next navigate="nav1"
+            next="next1"
+            back="back1"
+            linkTo1="/hover-realtime"
+            linkTo2="/Hover-Documentation"/>
         </>
       )}
 
@@ -120,7 +126,7 @@ export const HoverSimcomponent = () => {
 
       {screenWidth < 834 && (
         <>
-          <Parametersnew/>
+          <BlockDiagramand/>
           <SimulationStreaming
             className="simulation-streaming-3"
             simulationStreamingClassName="simulation-streaming-4"
@@ -193,6 +199,7 @@ export const HoverSimcomponent = () => {
             rectangle="rectanglefooter"
             copyright="copyrightfooter"
           />
+          
         </>
       )}
     </div>
