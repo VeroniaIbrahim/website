@@ -48,12 +48,6 @@ export const HoverSimcomponent = () => {
             arrow3="arrow1"
             arrow4="arrow1" />
           <SimulationStreaming className="simulation-streaming-instance" />
-          <ButtonsSim 
-            className="buttons-instance"
-            startClassName="start1"
-            stopClassName="stop1"
-            setClassName="set1"
-            resetClassName="reset1" />
           <Graphsim
             className="graphs-instance"
             divClassName="graphs-5"
@@ -122,7 +116,6 @@ export const HoverSimcomponent = () => {
             setSimulationPoints={setSimulationPoints}
             className="parameters-2" />
           <SimulationStreaming className="simulation-streaming-2" />
-          <ButtonsSim className="SimulationPoints-2" />
           <NavBar
             className="nav-bar-instance2"
           />

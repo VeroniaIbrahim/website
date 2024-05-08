@@ -1049,11 +1049,6 @@
   width: 85px;
 }
 
-.hoversim .div-5 {
-  height: 15px;
-  width: 84px;
-}
-
 .hoversim .overlap-10 {
   height: 15px;
   position: absolute;
@@ -1557,11 +1552,6 @@
 .hoversim .arrow1{
   left: 32px !important;
   z-index: -10;
-}
-
-.hoversim .start1{
-  left: 20px !important;
-  width: 150px !important;
 }
 
 .hoversim .stop1{
