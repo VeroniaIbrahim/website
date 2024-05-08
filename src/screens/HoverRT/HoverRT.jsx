@@ -110,11 +110,7 @@ export const HoverRTcomponent = () => {
       {screenWidth >= 834 && screenWidth < 1300 && (
         <>
           <Parameters className="parameters-instance" />
-          <URDFViewer
-            urdfUrl="/__parcel_source_root/src/2dofhover/urdf/2dofhover.urdf"
-            className="class-10"
-          />
-          <SimulationStreaming className="simulation-streaming-instance" />
+         
           <Buttons className="buttons-instance" />
           <Graphs
             className="graphs-instance"
@@ -175,6 +171,8 @@ export const HoverRTcomponent = () => {
           <URDFViewer
             urdfUrl="/__parcel_source_root/src/2dofhover/urdf/2dofhover.urdf"
             className="video-stream-instance"
+            width="1000"
+            height="600"
           />
           <Parametersnew
             setParameterData={setParameterData}
@@ -197,10 +195,6 @@ export const HoverRTcomponent = () => {
 
       {screenWidth < 834 && (
         <>
-          <URDFViewer
-            urdfUrl="../../2dofhover/urdf/2dofhover.urdf"
-            className="class-9"
-          />
           <Parameters
             className="parameters-3"
             divClassName="parameters-10"
