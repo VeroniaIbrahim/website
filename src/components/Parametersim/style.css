@@ -240,11 +240,12 @@
   background-color: #ffffff;
   font-family: "Salsa", Helvetica;
   font-size: 10px;
-  height: 17px;
+  height: 17px !important;
   left: 67px;
   position: absolute;
   top: 70px;
-  width: 88px;
+  width: 88px !important;
+  z-index: 10;
 }
 
 .parametersim .arrow-2 {
@@ -546,4 +547,33 @@
   position: absolute;
   text-align: center;
   top: 28px;
+}
+
+.parametersim .hello{
+  top:0px;
+  background-color: white;
+}
+
+.parametersim .buttonstart :hover{
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+.parametersim .buttonstart {
+  height: 50px;
+  left: 100px;
+  top: 100px;
+  width: 203px;
+  position: absolute;
+  background-color: #6454f0;
+  border-radius: 15px;
+  color: #ffffff;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-style: var(--subheader-font-style);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  text-align: center;
+  transition: all 0.2s ease;
 }
