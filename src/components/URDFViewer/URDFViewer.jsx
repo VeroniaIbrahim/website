@@ -47,7 +47,7 @@ scene.add(directionalLight);
           const controls = new OrbitControls(camera, renderer.domElement);
           camera.position.set(0.25, -0.65  ,0.4);
           camera.lookAt(0,0,0);
-          camera.rotation.set(1, 0.5, 0);
+          camera.rotation.set(1, 0.35 , 0);
           controls.addEventListener('change', () => {
             // Get current camera position
             const currentPosition = camera.position.clone();
