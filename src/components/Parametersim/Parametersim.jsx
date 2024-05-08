@@ -4,7 +4,7 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 */
 
 import React, {useState} from "react";
-import {main} from "../2DOF_Model";
+import {simulate} from "../2DOF_Model";
 import "./style.css";
 
 export const Parametersim = ({ 
@@ -52,7 +52,7 @@ export const Parametersim = ({
       };
       console.log("Data:", data);
       setParameterData(data);
-      main(data);
+      //simulate(data);
       
     };
   return (
