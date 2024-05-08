@@ -1,6 +1,6 @@
 import React, { useState,useRef } from "react";
 import { useWindowWidth } from "../../breakpoints";
-import { Buttons } from "../../components/Buttons";
+import { ButtonsSim } from "../../components/ButtonsSim";
 import { Footer } from "../../components/Footer";
 import { Graphsim } from "../../components/Graphsim";
 import { NavBar } from "../../components/NavBar";
@@ -18,13 +18,11 @@ import "./style.css";
 Amplify.configure(awsConfig);
 
 export const HoverSimcomponent = () => {
+  
   const screenWidth = useWindowWidth(); 
-  const [SimulationPoints,setSimulationPoints] =useState({
-    XPos: useRef(),
-    XVel: useRef(),
-    YPos: useRef(),
-    YVel: useRef(),
-  });
+  const [SimulationPoints,setSimulationPoints] = useState(null)
+
+
   return (
     <div className="hoversim"
       style={{
@@ -50,7 +48,7 @@ export const HoverSimcomponent = () => {
             arrow3="arrow1"
             arrow4="arrow1" />
           <SimulationStreaming className="simulation-streaming-instance" />
-          <Buttons 
+          <ButtonsSim 
             className="buttons-instance"
             startClassName="start1"
             stopClassName="stop1"
@@ -124,7 +122,7 @@ export const HoverSimcomponent = () => {
             setSimulationPoints={setSimulationPoints}
             className="parameters-2" />
           <SimulationStreaming className="simulation-streaming-2" />
-          <Buttons className="buttons-2" />
+          <ButtonsSim className="SimulationPoints-2" />
           <NavBar
             className="nav-bar-instance2"
           />
@@ -141,7 +139,7 @@ export const HoverSimcomponent = () => {
             className="simulation-streaming-3"
             simulationStreamingClassName="simulation-streaming-4"
           />
-          <Buttons
+          <ButtonsSim
             className="buttons-3"
             resetClassName="buttons-9"
             setClassName="buttons-11"

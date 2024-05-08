@@ -5,7 +5,6 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 
 import React, {useState} from "react";
 import {simulate} from "../2DOF_Model";
-import { Graphsim } from "../Graphsim";
 import "./style.css";
 
 export const Parametersim = ({ 
@@ -51,7 +50,7 @@ export const Parametersim = ({
         xposSet,
         yposSet,
       };
-      console.log("Data:", data);
+      //console.log("Data:", data);
       //setParameterData1(data);
       const Sim=simulate(data);
       console.log("Points:", Sim);
