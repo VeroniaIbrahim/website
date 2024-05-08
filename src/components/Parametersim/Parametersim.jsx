@@ -5,11 +5,12 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 
 import React, {useState} from "react";
 import {simulate} from "../2DOF_Model";
+import { Graphsim } from "../Graphsim";
 import "./style.css";
 
 export const Parametersim = ({ 
   className,
-  setParameterData,
+  setSimulationPoints,
   rollgroup,
   pitchgroup,
   plantimg,
@@ -51,9 +52,10 @@ export const Parametersim = ({
         yposSet,
       };
       console.log("Data:", data);
-      setParameterData(data);
-      //simulate(data);
-      
+      //setParameterData1(data);
+      const Sim=simulate(data);
+      console.log("Points:", Sim);
+      setSimulationPoints(Sim);
     };
   return (
     <div className={`parametersnew ${className}`}>

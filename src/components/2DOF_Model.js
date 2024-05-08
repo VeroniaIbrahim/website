@@ -341,20 +341,25 @@ function simulate(data) {
     Subsystem_initialize();
     let i = 0;
     const iterations = 1000;
+    var SIO = {
+        XPos: [],
+        XVel: [],
+        YPos: [],
+        YVel: []
+      };
     while (i < iterations) {
         rt_OneStep();
-        console.log(Subsystem_Y.thetaX, Subsystem_Y.thetaY);
+        //console.log(Subsystem_Y.thetaX, Subsystem_Y.thetaY);
+        SIO.XPos.push(Subsystem_Y.thetaX);
+        SIO.YPos.push(Subsystem_Y.thetaY_h);
+        SIO.XVel.push(Subsystem_Y.thetaX_j);
+        SIO.YVel.push(Subsystem_Y.thetaY);
         i++;
     }
     
     Subsystem_terminate();
 
-    return {
-        Xpos: Subsystem_Y.thetaX,
-        YPos: Subsystem_Y.thetaY,
-        XVel: Subsystem_Y.thetaX_j,
-        YVel: Subsystem_Y.thetaY_h
-    };
+    return SIO;
 }
 
 export { simulate };

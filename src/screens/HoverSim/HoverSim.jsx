@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { useWindowWidth } from "../../breakpoints";
 import { Buttons } from "../../components/Buttons";
 import { Footer } from "../../components/Footer";
@@ -18,8 +18,13 @@ import "./style.css";
 Amplify.configure(awsConfig);
 
 export const HoverSimcomponent = () => {
-  const screenWidth = useWindowWidth();
-  const [parameterData, setParameterData] = useState(null);
+  const screenWidth = useWindowWidth(); 
+  const [SimulationPoints,setSimulationPoints] =useState({
+    XPos: useRef(),
+    XVel: useRef(),
+    YPos: useRef(),
+    YVel: useRef(),
+  });
   return (
     <div className="hoversim"
       style={{
@@ -107,14 +112,16 @@ export const HoverSimcomponent = () => {
             linkTo2="/Hover-Documentation"/>
         </>
       )}
-
+     
       {screenWidth >= 1300 && (
+        
         <>
           <Footer className="footer-instance" />
           <Graphsim
+            SimulationPoints={SimulationPoints}
             className="graphs-17" />
           <Parametersim
-            setParameterData={setParameterData}
+            setSimulationPoints={setSimulationPoints}
             className="parameters-2" />
           <SimulationStreaming className="simulation-streaming-2" />
           <Buttons className="buttons-2" />

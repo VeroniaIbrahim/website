@@ -18,34 +18,45 @@ export const Graphsim = ({
   groupClassName2,
   groupClassName4,
   divClassName1,
+  SimulationPoints,
 }) => {
 
+  
   // Define chartRefs object
-  const chartRefs = {
+  /*var chartRefs = {
     XPos: useRef(),
     XVel: useRef(),
     YPos: useRef(),
     YVel: useRef(),
-  };
+  };*/
+  //chartRefs = SimulationPoints;
 
   // Define state to hold thetaX and thetaY values
-  const [thetaValues, setThetaValues] = useState({ XPos: 0, YPos: 0, XVel: 0, YVel: 0 });
-
+  //const [thetaValues, setThetaValues] = useState({ XPos: 0, YPos: 0, XVel: 0, YVel: 0 });
+  if(SimulationPoints==null){
+    SimulationPoints = {
+       XPos: useRef(),
+       XVel: useRef(),
+       YPos: useRef(),
+       YVel: useRef(),
+     }; }
   useEffect(() => {
+    
+    
     // Call the main function to get XPos, YPos, XVel, and YVel values
-    const fetchData = async () => {
-      const { XPos, YPos, XVel, YVel } = await simulate(); // Assuming main returns a promise
-      setThetaValues({ XPos, YPos, XVel, YVel });
-    };
-
-    fetchData(); // Fetch data when component mounts
-
+    /*const fetchData = async () => {
+      const { XPos, YPos, XVel, YVel } = await simulate(Data); // Assuming main returns a promise
+      setSimulationPoints({ XPos, YPos, XVel, YVel });
+    };*/
+    //fetchData(); // Fetch data when component mounts
+    //const { XPos, YPos, XVel, YVel } = simulate(Data);
+    
+    console.log("GOT DATA: "+SimulationPoints.XPos);
     // Create charts when data changes
-    for (const [key, ref] of Object.entries(chartRefs)) {
-      if (thetaValues[key] && ref.current) {
-        createGraph(ref.current.getContext("2d"), key, thetaValues[key]);
+
+      if (SimulationPoints["XPos"]) {
+        createGraph(getContext("2d"), "XPos", SimulationPoints.XPos);
       }
-    }
 
     // Cleanup function
     return () => {
@@ -56,7 +67,7 @@ export const Graphsim = ({
         });
       }
     };
-  }, [thetaValues]); // Run effect whenever thetaValues change
+  }, [SimulationPoints]); // Run effect whenever thetaValues change
 
   // Function to create chart
   const createGraph = (ctx, label, data) => {
@@ -91,22 +102,10 @@ export const Graphsim = ({
   return (
     <div className={`graphsim ${className}`}>
       <div className={`group-22 ${groupClassName}`}>
-        <canvas ref={chartRefs.XPos} className={`rectangle-5 ${rectangleClassName}`} id={`chart-XPos`}></canvas>
+        <canvas ref={SimulationPoints.XPos} className={`rectangle-5 ${rectangleClassName}`} id={`chart-XPos`}></canvas>
         <div className={`text-wrapper-12 ${xPosClassName}`}>X Pos</div>
       </div>
-      <div className={`group-24 ${divClassName}`}>
-        <canvas ref={chartRefs.XVel} className={`rectangle-6 ${divClassNameOverride}`}></canvas>
-        <div className={`x-vel ${xVelClassName}`}> X Vel</div>
-      </div>
-      <div className={`group-26 ${groupClassName2}`}>
-        <canvas ref={chartRefs.YPos} className={`rectangle-5 ${rectangleClassNameOverride}`}></canvas>
-        <div className={`text-wrapper-12 ${yPosClassName}`}>Y Pos</div>
-      </div>
-      <div className={`group-28 ${groupClassName4}`}>
-        <canvas ref={chartRefs.YVel} className={`rectangle-5 ${rectangleClassName1}`}></canvas>
-        <div className={`text-wrapper-12 ${yVelClassName}`}>Y Vel</div>
-      </div>
       <div className={`text-wrapper-14 ${divClassName1}`}>Graphs</div>
-    </div>
+  </div>
   );
 };
