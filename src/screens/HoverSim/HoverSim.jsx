@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useWindowWidth } from "../../breakpoints";
 import { Buttons } from "../../components/Buttons";
 import { Footer } from "../../components/Footer";
-import { Graphs } from "../../components/Graphs";
+import { Graphsim } from "../../components/Graphsim";
 import { NavBar } from "../../components/NavBar";
 import { NavBar_2 } from "../../components/NavBar_2";
 import { Next } from "../../components/Next/Next";
-import { Parametersnew } from "../../components/Parametersnew";
+import { Parametersim } from "../../components/Parametersim";
 import { BlockDiagramand } from "../../components/BlockDiagramand";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
 import { Amplify } from "aws-amplify";
@@ -19,6 +19,7 @@ Amplify.configure(awsConfig);
 
 export const HoverSimcomponent = () => {
   const screenWidth = useWindowWidth();
+  const [parameterData, setParameterData] = useState(null);
   return (
     <div className="hoversim"
       style={{
@@ -36,7 +37,7 @@ export const HoverSimcomponent = () => {
     >
       {screenWidth >= 834 && screenWidth < 1300 && (
         <>
-          <Parametersnew 
+          <Parametersim
             className="parameters-instance"
             rollgroup="rollgroup1"
             pitchgroup="pitchgroup1"
@@ -50,7 +51,7 @@ export const HoverSimcomponent = () => {
             stopClassName="stop1"
             setClassName="set1"
             resetClassName="reset1" />
-          <Graphs
+          <Graphsim
             className="graphs-instance"
             divClassName="graphs-5"
             divClassName1="graphs-16"
@@ -110,8 +111,11 @@ export const HoverSimcomponent = () => {
       {screenWidth >= 1300 && (
         <>
           <Footer className="footer-instance" />
-          <Graphs className="graphs-17" />
-          <Parametersnew
+          <Graphsim 
+            data={parameterData}
+            className="graphs-17" />
+          <Parametersim
+            setParameterData={setParameterData}
             className="parameters-2" />
           <SimulationStreaming className="simulation-streaming-2" />
           <Buttons className="buttons-2" />
@@ -138,7 +142,7 @@ export const HoverSimcomponent = () => {
             startClassName="buttons-90"
             stopClassName="buttons-6"
           />
-          <Graphs
+          <Graphsim
             className="graphs-18"
             divClassName="graphs-24"
             divClassName1="graphs-35"

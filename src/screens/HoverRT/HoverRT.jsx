@@ -111,7 +111,7 @@ export const HoverRTcomponent = () => {
         <>
           <Parameters className="parameters-instance" />
           <URDFViewer
-            urdfUrl="../../2dofhover/urdf/2dofhover.urdf"
+            urdfUrl="/__parcel_source_root/src/2dofhover/urdf/2dofhover.urdf"
             className="class-10"
           />
           <SimulationStreaming className="simulation-streaming-instance" />

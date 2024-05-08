@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(2dofhover)
+project(URDF_V2)
 
 find_package(catkin REQUIRED)
 
