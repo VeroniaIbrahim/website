@@ -18,18 +18,18 @@ const RollUpperLimit = 0.4;
 const RollYMotorSaturation = 30.0;
 const RollYStartThrust = 40.0;
 const g = 9.81;
-var xposkd = 0.0;
-var xposki = 1.0;
-var xposkp = 12.0;
-var xvelkd = 0.0;
-var xvelki = 5.0;
-var xvelkp = 30.0;
-var yposkd = 0.0;
-var yposki = 1.0;
-var yposkp = 10.0;
-var yvelkd = 0.0;
-var yvelki = 5.0;
-var yvelkp = 20.0;
+var ixposkd = 0.0;
+var ixposki = 1.0;
+var ixposkp = 12.0;
+var ixvelkd = 0.0;
+var ixvelki = 5.0;
+var ixvelkp = 30.0;
+var iyposkd = 0.0;
+var iyposki = 1.0;
+var iyposkp = 10.0;
+var iyvelkd = 0.0;
+var iyvelki = 5.0;
+var iyvelkp = 20.0;
 const mass_l = 2.495;
 const mass_u = 2.024;
 
@@ -119,9 +119,9 @@ function rt_OneStep() {
     Add17 = RollYStartThrust - Subsystem_Y.Y_velPID_ControlAction;
     Add18 = RollYStartThrust + Subsystem_Y.Y_velPID_ControlAction;
     rtb_Filter_m = Subsystem_DW.DiscreteTimeIntegrator1_DSTATE - Subsystem_DW.Delay1_DSTATE[0];
-    rtb_Filter = yposki * rtb_Filter_m;
-    rtb_FilterCoefficient = (yposkd * rtb_Filter_m - Subsystem_DW.Filter_DSTATE) * FilterCoeffN;
-    Subsystem_Y.Y_posPID_ControlAction = (yposkp * rtb_Filter_m + Subsystem_DW.Integrator_DSTATE) + rtb_FilterCoefficient;
+    rtb_Filter = iyposki * rtb_Filter_m;
+    rtb_FilterCoefficient = (iyposkd * rtb_Filter_m - Subsystem_DW.Filter_DSTATE) * FilterCoeffN;
+    Subsystem_Y.Y_posPID_ControlAction = (iyposkp * rtb_Filter_m + Subsystem_DW.Integrator_DSTATE) + rtb_FilterCoefficient;
 
     if (Subsystem_Y.Y_posPID_ControlAction > 1.0) {
         rtb_Filter_m = Subsystem_Y.Y_posPID_ControlAction - 1.0;
@@ -144,8 +144,8 @@ function rt_OneStep() {
 
     numAccum = 0.0165 * Subsystem_DW.DiscreteTransferFcn_states;
     rtb_Filter_m = (numAccum + Subsystem_Y.Y_posPID_ControlAction) - Subsystem_DW.Delay_DSTATE[0];
-    rtb_FilterCoefficient_d = (yvelkd * rtb_Filter_m - Subsystem_DW.Filter_DSTATE_p) * FilterCoeffN;
-    Subsystem_Y.Y_velPID_ControlAction = (yvelkp * rtb_Filter_m + Subsystem_DW.Integrator_DSTATE_h) + rtb_FilterCoefficient_d;
+    rtb_FilterCoefficient_d = (iyvelkd * rtb_Filter_m - Subsystem_DW.Filter_DSTATE_p) * FilterCoeffN;
+    Subsystem_Y.Y_velPID_ControlAction = (iyvelkp * rtb_Filter_m + Subsystem_DW.Integrator_DSTATE_h) + rtb_FilterCoefficient_d;
 
     if (Subsystem_Y.Y_velPID_ControlAction > RollYMotorSaturation) {
         rtb_Filter_b = Subsystem_Y.Y_velPID_ControlAction - RollYMotorSaturation;
@@ -185,9 +185,9 @@ function rt_OneStep() {
     Add21 = PitchXStartThrust - Subsystem_Y.X_velPID_ControlAction;
     Add22 = PitchXStartThrust + Subsystem_Y.X_velPID_ControlAction;
     rtb_Filter_b = Subsystem_DW.DiscreteTimeIntegrator_DSTATE - Subsystem_DW.Delay3_DSTATE[0];
-    rtb_Filter_m = xposki * rtb_Filter_b;
-    rtb_FilterCoefficient_h = (xposkd * rtb_Filter_b - Subsystem_DW.Filter_DSTATE_m) * FilterCoeffN;
-    Subsystem_Y.X_posPID_ControlAction = (xposkp * rtb_Filter_b + Subsystem_DW.Integrator_DSTATE_o) + rtb_FilterCoefficient_h;
+    rtb_Filter_m = ixposki * rtb_Filter_b;
+    rtb_FilterCoefficient_h = (ixposkd * rtb_Filter_b - Subsystem_DW.Filter_DSTATE_m) * FilterCoeffN;
+    Subsystem_Y.X_posPID_ControlAction = (ixposkp * rtb_Filter_b + Subsystem_DW.Integrator_DSTATE_o) + rtb_FilterCoefficient_h;
 
     if (Subsystem_Y.X_posPID_ControlAction > 1.0) {
         rtb_Filter_b = Subsystem_Y.X_posPID_ControlAction - 1.0;
@@ -210,8 +210,8 @@ function rt_OneStep() {
 
     numAccum_0 = 0.0165 * Subsystem_DW.DiscreteTransferFcn1_states;
     rtb_Filter_b = (numAccum_0 + Subsystem_Y.X_posPID_ControlAction) - Subsystem_DW.Delay2_DSTATE[0];
-    rtb_FilterCoefficient_b = (xvelkd * rtb_Filter_b - Subsystem_DW.Filter_DSTATE_h) * FilterCoeffN;
-    Subsystem_Y.X_velPID_ControlAction = (xvelkp * 0.4 * rtb_Filter_b + Subsystem_DW.Integrator_DSTATE_b) + rtb_FilterCoefficient_b;
+    rtb_FilterCoefficient_b = (ixvelkd * rtb_Filter_b - Subsystem_DW.Filter_DSTATE_h) * FilterCoeffN;
+    Subsystem_Y.X_velPID_ControlAction = (ixvelkp * 0.4 * rtb_Filter_b + Subsystem_DW.Integrator_DSTATE_b) + rtb_FilterCoefficient_b;
 
     if (Subsystem_Y.X_velPID_ControlAction > PitchXMotorSaturation) {
         rtb_Cos = Subsystem_Y.X_velPID_ControlAction - PitchXMotorSaturation;
@@ -323,23 +323,21 @@ function rt_OneStep() {
     OverrunFlag = false;
 }
 
-function main(data) {
-    var {
-        xposkp,
-        yposkp,
-        xposki,
-        yposki,
-        xposkd,
-        yposkd,
-        xvelkp,
-        yvelkp,
-        xvelki,
-        yvelki,
-        xvelkd,
-        yvelkd,
-        xposSet,
-        yposSet,
-    } = data;
+function simulate(data) {
+    // Assign the new parameter values
+    ixposkp = data.xposkp;
+    iyposkp = data.yposkp;
+    ixposki = data.xposki;
+    iyposki = data.yposki;
+    ixposkd = data.xposkd;
+    iyposkd = data.yposkd;
+    ixvelkp = data.xvelkp;
+    iyvelkp = data.yvelkp;
+    ixvelki = data.xvelki;
+    iyvelki = data.yvelki;
+    ixvelkd = data.xvelkd;
+    iyvelkd = data.yvelkd;
+
     Subsystem_initialize();
     let i = 0;
     const iterations = 1000;
@@ -348,7 +346,15 @@ function main(data) {
         console.log(Subsystem_Y.thetaX, Subsystem_Y.thetaY);
         i++;
     }
+    
     Subsystem_terminate();
+
+    return {
+        Xpos: Subsystem_Y.thetaX,
+        YPos: Subsystem_Y.thetaY,
+        XVel: Subsystem_Y.thetaX_j,
+        YVel: Subsystem_Y.thetaY_h
+    };
 }
 
-export { main };
+export { simulate };

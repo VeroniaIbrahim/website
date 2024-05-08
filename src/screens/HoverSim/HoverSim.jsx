@@ -111,8 +111,7 @@ export const HoverSimcomponent = () => {
       {screenWidth >= 1300 && (
         <>
           <Footer className="footer-instance" />
-          <Graphsim 
-            data={parameterData}
+          <Graphsim
             className="graphs-17" />
           <Parametersim
             setParameterData={setParameterData}
