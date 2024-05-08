@@ -12,18 +12,16 @@ export const ButtonsSim = ({
   startClassName,
   setClassName,
   resetClassName,
-  updateParameterData,
-  sendDataTostart,
+  GraphAndSimulate,
   sendDataTostop,
 }) => {
 
   return (
     <div className={`buttons ${className}`}>
       <button className={`stop ${stopClassName}`} onClick={sendDataTostop} >Stop</button>
-      <button className={`start ${startClassName}`} onClick={sendDataTostart}>Start</button>
-      <button className={`set ${setClassName}`} onClick={updateParameterData}>Set</button>
+      <button className={`start ${startClassName}`} onClick={GraphAndSimulate}>Start</button>
+      <button className={`set ${setClassName}`} onClick={GraphAndSimulate}>Set</button>
       <button className={`reset ${resetClassName}`}>Reset</button>
     </div>
   );
 };
-  

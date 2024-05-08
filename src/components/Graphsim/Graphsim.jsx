@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Chart from "chart.js/auto"; // Import Chart.js library
+import Chart from "chart.js/auto";
 import "./style.css";
-import { simulate } from "../2DOF_Model";
 
 export const Graphsim = ({
   className,
@@ -21,7 +20,6 @@ export const Graphsim = ({
   SimulationPoints,
 }) => {
 
-  // Define chartRefs object
   const chartRefs = {
     XPos: useRef(),
     XVel: useRef(),
@@ -29,32 +27,31 @@ export const Graphsim = ({
     YVel: useRef(),
   };
 
-  // Define state to hold thetaX and thetaY values
-  //const [thetaValues, setThetaValues] = useState({ XPos: [], YPos: [], XVel: [], YVel: [] });
-
   useEffect(() => {
-    // Call the main function to get XPos, YPos, XVel, and YVel values
-  /*if(SimulationPoints){
-        setThetaValues(SimulationPoints);
-    }*/
-    if(SimulationPoints){
-    
-    // Create charts when data changes
-    for (const [key, ref] of Object.entries(chartRefs)) {
-      console.log("THETA "+SimulationPoints);
-      if (SimulationPoints[key] && ref.current) {
-        try{
-        createGraph(ref.current.getContext("2d"), key, SimulationPoints[key]);
-        } catch(e){
-          if (typeof Chart !== 'undefined' && Chart.helpers && Chart.helpers.each) {
-            Chart.helpers.each(Chart.instances, function (instance) {
-              instance.destroy();
-            });
+    if (SimulationPoints) {
+      
+      for (const [key, ref] of Object.entries(chartRefs)) {
+        if (SimulationPoints[key] && ref.current) {
+          // Get existing chart instance if it exists
+          
+          try {
+            createGraph(ref.current.getContext("2d"), key, SimulationPoints[key]);
+          } catch(e) {
+            console.error("Error creating graph:", e);
+            var chart = Chart.getChart("XPOS_G");
+            chart.destroy();
+            chart = Chart.getChart("XVEL_G");
+            chart.destroy();
+            chart = Chart.getChart("YPOS_G");
+            chart.destroy();
+            chart = Chart.getChart("YVEL_G");
+            chart.destroy();
+            createGraph(ref.current.getContext("2d"), key, SimulationPoints[key]);
           }
         }
       }
     }
-  }
+
     // Cleanup function
     return () => {
       // Destroy all existing charts if Chart.js is loaded
@@ -64,8 +61,8 @@ export const Graphsim = ({
         });
       }
     };
-  }, [SimulationPoints]); // Run effect whenever thetaValues change
-  // Function to create chart
+  }, [SimulationPoints]);
+
   const createGraph = (ctx, label, data) => {
     return new Chart(ctx, {
       type: "line",
@@ -93,24 +90,25 @@ export const Graphsim = ({
         },
       },
     });
+
   };
 
   return (
     <div className={`graphsim ${className}`}>
       <div className={`group-22 ${groupClassName}`}>
-        <canvas ref={chartRefs.XPos} className={`rectangle-5 ${rectangleClassName}`} id={`chart-XPos`}></canvas>
+        <canvas ref={chartRefs.XPos} className={`rectangle-5 ${rectangleClassName}`} id="XPOS_G" ></canvas>
         <div className={`text-wrapper-12 ${xPosClassName}`}>X Pos</div>
       </div>
       <div className={`group-24 ${divClassName}`}>
-        <canvas ref={chartRefs.XVel} className={`rectangle-6 ${divClassNameOverride}`}></canvas>
+        <canvas ref={chartRefs.XVel} className={`rectangle-6 ${divClassNameOverride}`} id="XVEL_G"></canvas>
         <div className={`x-vel ${xVelClassName}`}> X Vel</div>
       </div>
       <div className={`group-26 ${groupClassName2}`}>
-        <canvas ref={chartRefs.YPos} className={`rectangle-5 ${rectangleClassNameOverride}`}></canvas>
+        <canvas ref={chartRefs.YPos} className={`rectangle-5 ${rectangleClassNameOverride}`} id="YPOS_G"></canvas>
         <div className={`text-wrapper-12 ${yPosClassName}`}>Y Pos</div>
       </div>
       <div className={`group-28 ${groupClassName4}`}>
-        <canvas ref={chartRefs.YVel} className={`rectangle-5 ${rectangleClassName1}`}></canvas>
+        <canvas ref={chartRefs.YVel} className={`rectangle-5 ${rectangleClassName1}`} id="YVEL_G"></canvas>
         <div className={`text-wrapper-12 ${yVelClassName}`}>Y Vel</div>
       </div>
       <div className={`text-wrapper-14 ${divClassName1}`}>Graphs</div>

@@ -14,6 +14,7 @@ import awsConfig from "../../aws-export";
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import "./style.css";
+import { simulate } from "../../components/2DOF_Model";
 
 Amplify.configure(awsConfig);
 
@@ -21,8 +22,13 @@ export const HoverSimcomponent = () => {
   
   const screenWidth = useWindowWidth(); 
   const [SimulationPoints,setSimulationPoints] = useState(null)
+  const [ParameterData,setParameterData] = useState(null)
+  const GraphAndSimulate = () => {
+    const Sim=simulate(ParameterData);
+    console.log("Points:", SimulationPoints);
 
-
+    setSimulationPoints(Sim);
+  };
   return (
     <div className="hoversim"
       style={{
@@ -119,10 +125,11 @@ export const HoverSimcomponent = () => {
             SimulationPoints={SimulationPoints}
             className="graphs-17" />
           <Parametersim
-            setSimulationPoints={setSimulationPoints}
+            setParameterData={setParameterData}
             className="parameters-2" />
           <SimulationStreaming className="simulation-streaming-2" />
-          <ButtonsSim className="SimulationPoints-2" />
+          <ButtonsSim className="SimulationPoints-2" 
+          GraphAndSimulate={GraphAndSimulate} />
           <NavBar
             className="nav-bar-instance2"
           />

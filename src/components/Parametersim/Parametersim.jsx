@@ -9,7 +9,7 @@ import "./style.css";
 
 export const Parametersim = ({ 
   className,
-  setSimulationPoints,
+  setParameterData,
   rollgroup,
   pitchgroup,
   plantimg,
@@ -51,10 +51,8 @@ export const Parametersim = ({
         yposSet,
       };
       //console.log("Data:", data);
-      //setParameterData1(data);
-      const Sim=simulate(data);
-      console.log("Points:", Sim);
-      setSimulationPoints(Sim);
+      setParameterData(data);
+     
     };
   return (
     <div className={`parametersnew ${className}`}>
