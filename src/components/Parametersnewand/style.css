@@ -413,3 +413,63 @@
   text-align: center;
   top: 5px;
 }
+
+/* Add styles for popups */
+.parametersnewand .popup {
+  position: absolute;
+  background: linear-gradient(135deg, rgb(5, 5, 24) 7.28%, rgb(23, 3, 43) 96.28%);
+  width: 100px;
+  z-index: 999; /* Ensure popup is above other elements */
+}
+
+/* Add styles for input fields and buttons inside the popup */
+.parametersnewand .popup input {
+  top: 5px;
+  left: 10px;
+  width: 90px;
+  height: 17px;
+  margin: 5px; /* Add margin-bottom */
+}
+
+.parametersnewand .popup button {
+  margin: 5px;
+
+  font-size: 10px; /* Add margin-right */
+}
+
+/* Add styles for PID buttons */
+.parametersnewand .pid-button {
+  color: #ffffff;
+  font-family: "Salsa", Helvetica;
+  font-size: 8px;
+  font-weight: 400;
+  height: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  display: inline-block; /* Display as inline-block */
+  padding: 5px; /* Add padding */
+  border: 1px solid #6454f0;
+  border-radius: 5px;
+  margin-right: 10px; /* Add margin-right */
+}
+
+/* Add styles for PID popups */
+.parametersnewand .pid-popup {
+  position: absolute;
+  width: 100px;
+  background: linear-gradient(135deg, rgb(5, 5, 24) 7.28%, rgb(23, 3, 43) 96.28%);
+  z-index: 999; /* Ensure popup is above other elements */
+}
+
+/* Add styles for PID input fields and buttons inside the popup */
+.parametersnewand .pid-popup input {
+  top: 5px;
+  left: 10px;
+  width: 90px;
+  height: 17px; /* Add margin-bottom */
+}
+
+.parametersnewand .pid-popup button {
+  margin-right: 5px; /* Add margin-right */
+}
