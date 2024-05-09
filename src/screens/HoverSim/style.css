@@ -300,16 +300,9 @@
   align-items: center !important;
 }
 
-.hoversim .instance-node {
-  height: 307px !important;
-  top: 70px !important;
-  width: 379px !important;
-}
-
 .hoversim .graphs-2 {
-  height: 266px !important;
-  top: 41px !important;
-  width: 377px !important;
+  height: 265px !important;
+  width: 375px !important;
 }
 
 .hoversim .graphs-3 {
@@ -326,67 +319,25 @@
 }
 
 .hoversim .graphs-5 {
-  height: 310px !important;
-  top: 698px !important;
-  width: 379px !important;
+  top: 420px !important;
 }
 
-.hoversim .graphs-6 {
-  height: 266px !important;
-  top: 44px !important;
-  width: 377px !important;
-}
-
-.hoversim .graphs-7 {
-  left: 158px !important;
-}
-
-.hoversim .graphs-8 {
-  height: 307px !important;
-  top: 1016px !important;
-  width: 379px !important;
+.hoversim .instance-node {
+  top: 70px !important;
 }
 
 .hoversim .graphs-9 {
-  height: 310px !important;
   left: 388px !important;
-  top: 67px !important;
-  width: 379px !important;
+  top: 70px !important;
+}
+
+.hoversim .graphs-12 {
+  left: 388px !important;
+  top: 420px !important;
 }
 
 .hoversim .graphs-10 {
   left: 139px !important;
-}
-
-.hoversim .graphs-11 {
-  height: 310px !important;
-  left: 388px !important;
-  top: 382px !important;
-  width: 379px !important;
-}
-
-.hoversim .graphs-12 {
-  height: 310px !important;
-  left: 388px !important;
-  top: 698px !important;
-  width: 379px !important;
-}
-
-.hoversim .graphs-13 {
-  left: 140px !important;
-}
-
-.hoversim .graphs-14 {
-  height: 310px !important;
-  left: 388px !important;
-  top: 1013px !important;
-  width: 379px !important;
-}
-
-.hoversim .graphs-15 {
-  height: 29px !important;
-  left: 140px !important;
-  width: unset !important;
 }
 
 .hoversim .graphs-16 {
@@ -582,7 +533,7 @@
   background-color: transparent !important;
   left: 100px !important;
   position: absolute !important;
-  top: 2600px !important;
+  top: 1700px !important;
 }
 
 .hoversim .graphs-17 {
@@ -592,7 +543,7 @@
 }
 
 .hoversim .nav {
-  top: 2500px !important;
+  top: 1640px !important;
 }
 
 .hoversim .video-stream-instance {
@@ -613,7 +564,7 @@
   top: 120px !important;
 }
 
-.hoversim .buttons-2 {
+.hoversim .SimulationPoints-2 {
   left: 1050px !important;
   position: absolute !important;
   top: 250px !important;
@@ -893,9 +844,9 @@
 
 .hoversim .buttons-3 {
   height: 85px !important;
-  left: 0px !important;
+  left: -10px !important;
   position: absolute !important;
-  top: 540px !important;
+  top: 200px !important;
   width: 284px !important;
 }
 
@@ -923,6 +874,8 @@
   white-space: nowrap !important;
   width: 70px !important;
   align-items: center !important;
+  border-radius: 7px !important;
+  border-width: 2px !important;
 }
 
 .hoversim .buttons-7 {
@@ -948,6 +901,8 @@
   white-space: nowrap !important;
   width: 70px !important;
   align-items: center !important;
+  border-radius: 7px !important;
+  border-width: 2px !important;
 }
 
 .hoversim .buttons-90 {
@@ -963,6 +918,7 @@
   white-space: nowrap !important;
   width: 70px !important;
   align-items: center !important;
+  border-radius: 7px !important;
 }
 
 .hoversim .buttons-10 {
@@ -984,6 +940,7 @@
   white-space: nowrap !important;
   width: 70px !important;
   align-items: center !important;
+  border-radius: 7px !important;
 }
 
 .hoversim .buttons-12 {
@@ -1112,24 +1069,42 @@
   width: 24px;
 }
 
-.hoversim .graphs-18 {
-  height: 1565px !important;
-  left: 20px !important;
-  position: absolute !important;
-  top: 810px !important;
-  width: 326px !important;
-}
-
 .hoversim .graphs-19 {
   height: 359px !important;
-  top: 87px !important;
+  top: 35px !important;
+  width: 163px !important;
+}
+
+.hoversim .graphs-24 {
+  height: 359px !important;
+  top: 400px !important;
+  width: 163px !important;
+}
+
+.hoversim .graphs-28 {
+  height: 359px !important;
+  left: 165px !important;
+  top: 35px !important;
+  width: 163px !important;
+}
+
+.hoversim .graphs-31 {
+  height: 359px !important;
+  left: 165px !important;
+  top: 400px !important;
+  width: 163px !important;
+}
+
+.hoversim .graphs-18 {
+  height: 359px !important;
+  left: 10px !important;
+  top: 220px !important;
   width: 163px !important;
 }
 
 .hoversim .graphs-20 {
   height: 315px !important;
-  top: 44px !important;
-  width: 161px !important;
+  width: 160px !important;
 }
 
 .hoversim .graphs-21 {
@@ -1143,6 +1118,7 @@
   line-height: normal !important;
   white-space: nowrap !important;
   width: unset !important;
+  top: 25px !important;
 }
 
 .hoversim .graphs-22 {
@@ -1151,62 +1127,13 @@
   width: 163px !important;
 }
 
-.hoversim .graphs-23 {
-  font-family: "Salsa", Helvetica !important;
-  font-size: 15px !important;
-  font-style: unset !important;
-  font-weight: 400 !important;
-  height: 18px !important;
-  left: 62px !important;
-  letter-spacing: 0 !important;
-  line-height: normal !important;
-  white-space: nowrap !important;
-  width: unset !important;
-}
-
-.hoversim .graphs-24 {
-  height: 359px !important;
-  top: 833px !important;
-  width: 163px !important;
-}
-
-.hoversim .graphs-25 {
-  font-family: "Salsa", Helvetica !important;
-  font-size: 15px !important;
-  font-style: unset !important;
-  font-weight: 400 !important;
-  height: 18px !important;
-  left: 61px !important;
-  letter-spacing: 0 !important;
-  line-height: normal !important;
-  white-space: nowrap !important;
-}
-
 .hoversim .graphs-26 {
   height: 359px !important;
   top: 1206px !important;
   width: 163px !important;
 }
 
-.hoversim .graphs-27 {
-  font-family: "Salsa", Helvetica !important;
-  font-size: 15px !important;
-  font-style: unset !important;
-  font-weight: 400 !important;
-  height: 18px !important;
-  left: 64px !important;
-  letter-spacing: 0 !important;
-  line-height: normal !important;
-  white-space: nowrap !important;
-  width: unset !important;
-}
 
-.hoversim .graphs-28 {
-  height: 359px !important;
-  left: 165px !important;
-  top: 87px !important;
-  width: 163px !important;
-}
 
 .hoversim .graphs-29 {
   font-family: "Salsa", Helvetica !important;
@@ -1224,13 +1151,6 @@
   height: 359px !important;
   left: 165px !important;
   top: 460px !important;
-  width: 163px !important;
-}
-
-.hoversim .graphs-31 {
-  height: 359px !important;
-  left: 165px !important;
-  top: 833px !important;
   width: 163px !important;
 }
 
@@ -1343,8 +1263,8 @@
 }
 
 .hoversim .footer5{
-  left:0px !important;
-  top:2440px !important;
+  left: -50px !important;
+  top: 1080px !important;
 }
 
 .hoversim .groupfooter{
@@ -1443,7 +1363,7 @@
 
 .hoversim .footer1{
   left:0px !important;
-  top:2100px !important;
+  top:1500px !important;
   position: absolute !important;
 }
 
@@ -1554,6 +1474,12 @@
   z-index: -10;
 }
 
+.hoversim .start1{
+  left: 10px !important;
+  top: 0px !important;
+  width: 150px !important;
+}
+
 .hoversim .stop1{
   left: 200px !important;
   top: 0px !important;
@@ -1573,10 +1499,35 @@
 }
 
 .hoversim .nav1{
-  top: 2030px !important;
+  top: 1450px !important;
   position: absolute !important;
 }
 
 .hoversim .next1{
   left: 710px !important;
+}
+
+.hoversim .Parametersnewand5{
+  top: 80px !important;
+  position: absolute !important;
+}
+
+.hoversim .navigate2{
+  top: 1030px !important;
+}
+
+.hoversim .next2{
+  border-radius: 5px !important;
+  height: 22px !important;
+  width: 40px !important;
+  left: 290px !important;
+  font-size: 12px !important;
+}
+
+.hoversim .back2{
+  border-radius: 5px !important;
+  height: 22px !important;
+  width: 40px !important;
+  left: 10px !important;
+  font-size: 12px !important;
 }
